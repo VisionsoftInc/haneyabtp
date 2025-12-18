@@ -1,0 +1,32 @@
+<mvc:View
+    controllerName="haneya.controller.AiRPAInterCompSalesEventBasedOutput"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:smartTable="sap.ui.comp.smarttable">
+
+    <Page title="AI Process Automation Output">
+        <smartTable:SmartTable
+            id="smartTableAI"
+            entitySet="Sales_Order_StatusSet"
+            tableType="Table"
+            header="Sales Orders"
+            enableAutoBinding="true"
+            useVariantManagement="true"
+            useTablePersonalisation="true"
+            showRowCount="true"
+            beforeRebindTable="onBeforeRebindTable"
+            initiallyVisibleFields="SO_NUMBER,SO_STATUS,PR_NUMBER,PR_STATUS,PO_NUMBER,PO_STATUS,INB_DELIVERY,INB_STATUS,GR_NUMBER,GR_STATUS,INTER_INVOICE,INTER_INV_STS,OUT_DELIVERY,OUTBOND_STS,PGI_NUMBER,PGI_STS,CUST_INVOICE,CUST_INV_STS,CREATED_ON,REMARKS">
+
+            <smartTable:customToolbar>
+                <Toolbar>
+                    <Button
+                        icon="sap-icon://repost"
+                        tooltip="Reprocess"
+                        press="onReprocess"
+                        text="AI.PROCESS"
+                        type="Emphasized" />
+                </Toolbar>
+            </smartTable:customToolbar>
+        </smartTable:SmartTable>
+    </Page>
+</mvc:View>

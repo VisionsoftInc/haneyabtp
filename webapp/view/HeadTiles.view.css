@@ -1,0 +1,29 @@
+.tileBlue {
+    background-color: #6db1e8; /* light blue background */
+    color: #a10d0d;
+}
+.tileGreen {
+    background-color: #C8E6C9; /* light green */
+    color: #1B5E20;
+}
+.tileRed {
+    background-color: #FFCDD2; /* light red background */
+    color: #393737; /* text color */
+}
+.tileBlue .sapMGTHdrTxt {
+    color: #e0340d !important;
+}
+.customPanel {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 60px;
+}
+
+.radioButtonSpacing .sapMRb {
+    margin-right: 70px;
+}
+
+.marginTop20 {
+    margin-top: 20px;
+}

@@ -1,0 +1,20 @@
+.bigBlackBox {
+    border: 0.1px solid black;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    background-color: white; 
+    display: flex;
+    justify-content: center;
+    height: 60%;
+}
+.datebox{
+    border: 0.1px solid black;
+    width: 100%;
+    padding-left: 15px;
+}
+.selecttext{
+    font-weight: bold;
+    font-size: 1rem; 
+    text-decoration: blue;
+}

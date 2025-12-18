@@ -1,0 +1,73 @@
+<mvc:View controllerName="haneya.controller.CustomObject"
+    xmlns:l="sap.ui.layout" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page showHeader="false" class="sapUiSizeCompact">
+
+        <OverflowToolbar>
+            <Button icon="sap-icon://save" text="Save as variant" tooltip="Save as variant" />
+            <Button icon="sap-icon://course-book" tooltip="Get variant" />
+            <MenuButton text="more" tooltip="more">
+                <menu>
+                    <Menu itemSelected="onItemSelect1">
+                        <MenuItem text="Execute and Print" />
+                        <MenuItem text="Cancel" />
+                    </Menu>
+                </menu>
+            </MenuButton>
+            <ToolbarSpacer/> 
+            <Button text="Exit" />
+        </OverflowToolbar>
+
+
+        <VBox class="bigBlackBox">
+        <Title text="Upgrade Conflicts" level="H2" textAlign="Left" />
+            <f:SimpleForm
+                editable="true"
+                layout="ResponsiveGridLayout"
+                adjustLabelSpan="true"
+            >
+
+                <Label text="Application" />
+                <HBox>
+                    <Input width="40%" />
+                    <Label text="to:" width="40%" textAlign="Center" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+                    <Input width="40%"/>
+                    <Button icon="sap-icon://begin" type="Neutral" width="40%" tooltip="Multiple Selection"/>
+                </HBox>
+
+                <Label text="Program Name" />
+                <HBox>
+                    <Input width="90%" />
+                    <Button icon="sap-icon://begin" type="Neutral" tooltip="Multiple Selection" width="40%"/>
+                </HBox>
+
+                <Label text="Package Name" />
+                <HBox>
+                    <Input width="90%" />
+                    <Button icon="sap-icon://begin" type="Neutral" tooltip="Multiple Selection" width="40%"/>
+                </HBox>
+
+                <Label text="Path" />
+                <Input width="50%" />
+
+                <Label text="Download" />
+                <CheckBox />
+
+            </f:SimpleForm>
+
+        </VBox>
+
+        <Label text="Please provide either Package or Program for better performance" />
+
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer/>
+                <Button text="Execute" type="Emphasized" tooltip="Execute"/>
+            </OverflowToolbar>
+        </footer>
+
+    </Page>
+</mvc:View>

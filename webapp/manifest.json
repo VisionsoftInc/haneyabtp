@@ -1,0 +1,236 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "haneya",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.19.5",
+      "toolsId": "31e89c53-71b4-4d88-8184-c455de1dad83"
+    },
+     "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/VSHANEYA/EVT_ST_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "StockTransfer": {
+      "uri": "/sap/opu/odata/VSHANEYA/ZSTO_TRANS_IN_SRV/",
+      "type": "OData",
+      "settings": {
+        "annotations": [],
+        "localUri": "localService/StockTransfer/metadata.xml",
+        "odataVersion": "2.0"
+      }
+    },
+      "Consignment": {
+      "uri": "/sap/opu/odata/sap/ZVSHANEYA_SALES_CONSIGNMENT_SRV/",
+      "type": "OData",
+      "settings": {
+        "annotations": [],
+        "localUri": "localService/Consignment/metadata.xml",
+        "odataVersion": "2.0"
+      }
+    }
+  }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.142.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "haneya.i18n.i18n"
+        }
+      },
+      "aiprocess": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "mainService",
+        "settings": {
+          "useBatch": false
+        }
+      },
+      "stockTransferModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "StockTransfer",
+        "settings": {
+          "useBatch": false
+        }
+      },
+      "ConsignmentModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "Consignment",
+        "settings": {
+          "useBatch": false
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "haneya.view",
+        "async": true,
+        "viewPath": "haneya.view"
+      },
+      "routes": [
+        {
+          "name": "RouteHomePage",
+          "pattern": ":?query:",
+          "target": [
+            "TargetHomePage"
+          ]
+        },
+        {
+          "name": "HeadTiles",
+          "pattern": "HeadTiles/{text}",
+          "target": "HeadTiles"
+        },
+        {
+          "name": "SubTiles",
+          "pattern": "SubTiles",
+          "target": "SubTiles"
+        },
+        {
+          "name": "CustomObject",
+          "pattern": "CustomObject",
+          "target": "CustomObject"
+        },
+        {
+          "name": "AiProcessAutomationHeadTile",
+          "pattern": "AiProcessAutomationHeadTile",
+          "target": "AiProcessAutomationHeadTile"
+        },
+        {
+          "name": "AiProcessAutomationSubTile",
+          "pattern": "AiProcessAutomationSubTile",
+          "target": "AiProcessAutomationSubTile"
+        },
+        {
+          "name": "AiProcessAutomationSS",
+          "pattern": "AiProcessAutomationSS",
+          "target": "AiProcessAutomationSS"
+        },
+        {
+          "name": "AiRPAInterCompSalesEventBasedOutput",
+          "pattern": "AiRPAInterCompSalesEventBasedOutput/{startDate}/{endDate}/{status}",
+          "target": "AiRPAInterCompSalesEventBasedOutput"
+        },
+        {
+          "name": "AiInterCompanyStockTransfer",
+          "pattern": "AiInterCompanyStockTransfer",
+          "target": "AiInterCompanyStockTransfer"
+        },
+        {
+          "name": "AiRPAStockTransferOutputScreen",
+          "pattern": "AiRPAStockTransferOutputScreen",
+          "target": "AiRPAStockTransferOutputScreen"
+        },
+        {
+          "name": "AiRPAConsignmentSalesSS",
+          "pattern": "AiRPAConsignmentSalesSS",
+          "target": "AiRPAConsignmentSalesSS"
+        },
+        {
+          "name": "AiRPAConsignmentSalesOutput",
+          "pattern": "AiRPAConsignmentSalesOutput",
+          "target": "AiRPAConsignmentSalesOutput"
+        }
+      ],
+      "targets": {
+        "TargetHomePage": {
+          "id": "HomePage",
+          "name": "HomePage"
+        },
+        "HeadTiles":{
+        "viewName":"HeadTiles"
+        },
+        "SubTiles":{
+        "viewName":"SubTiles"
+        },
+        "CustomObject":{
+        "viewName":"CustomObject"
+        },
+        "AiProcessAutomationHeadTile":{
+          "viewName":"AiProcessAutomationHeadTile"
+        },
+        "AiProcessAutomationSubTile":{
+          "viewName":"AiProcessAutomationSubTile"
+        },
+        "AiProcessAutomationSS":{
+          "viewName":"AiProcessAutomationSS"
+        },
+        "AiRPAInterCompSalesEventBasedOutput":{
+          "viewName":"AiRPAInterCompSalesEventBasedOutput"
+        },
+        "AiInterCompanyStockTransfer":{
+          "viewName":"AiInterCompanyStockTransfer"
+        },
+        "AiRPAStockTransferOutputScreen":{
+          "viewName":"AiRPAStockTransferOutputScreen"
+        },
+        "AiRPAConsignmentSalesSS":{
+          "viewName":"AiRPAConsignmentSalesSS"
+        },
+        "AiRPAConsignmentSalesOutput":{
+          "viewName":"AiRPAConsignmentSalesOutput"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "haneya.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

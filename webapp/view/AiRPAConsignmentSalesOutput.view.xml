@@ -1,0 +1,68 @@
+<mvc:View
+    controllerName="haneya.controller.AiRPAConsignmentSalesOutput"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:smartTable="sap.ui.comp.smarttable">
+
+    <Page title="Inter Company Sales Consignment">
+        
+        <!-- Toolbar with Refresh Button -->
+        <headerContent>
+            <Button
+                text="Reprocess"
+                press="onReprocessPress"/>
+        </headerContent>
+    <ScrollContainer
+        horizontal="true">
+        <!-- Table to display Function Import data -->
+        <Table
+            id="ConsignmentTable"
+            inset="false"
+            items="{
+                path: 'ConsignmentModel>/records'}"
+            width="auto"
+            
+          >
+
+    <!-- Define Columns -->
+    <columns >
+        <Column width="4rem"><Text text="Select"/></Column>
+        <Column width="8rem"><Text text="ICON"/></Column>
+        <Column width="8rem"><Text text="SEL"/></Column>
+        <Column width="8rem"><Text text="MAIN_ID"/></Column>
+        <Column width="8rem"><Text text="VBELN_SO"/></Column>
+        <Column width="8rem"><Text text="STATUS_SO"/></Column>
+        <Column width="8rem"><Text text="VBELN_DL"/></Column>
+        <Column width="8rem"><Text text="STATUS_DL"/></Column>
+        <Column width="8rem"><Text text="BILLNO"/></Column>
+        <Column width="8rem"><Text text="STATUS_BL"/></Column>
+        <!-- <Column width="8rem"><Text text="CELLTAB"/></Column> -->
+        <!-- <Column width="8rem"><Text text="GJAHR"/></Column>
+        <Column width="10rem"><Text text="BUKRS"/></Column> -->
+    </columns>
+
+    <!-- Template for each row -->
+    <ColumnListItem  type="{= ${ConsignmentModel>BILLNO} ? 'Inactive' : 'Active' }">
+        <cells>
+        <CheckBox selected="{ConsignmentModel>selected}" 
+                      enabled="{= !${ConsignmentModel>BILLNO} }"
+                      visible="{= !${ConsignmentModel>BILLNO} }"/>
+            <Text text="{ConsignmentModel>ICON}"/>
+            <Text text="{ConsignmentModel>SEL}"/>
+            <Text text="{ConsignmentModel>MAIN_ID}"/>
+            <Text text="{ConsignmentModel>VBELN_SO}"/>
+            <Text text="{ConsignmentModel>STATUS_SO}"/>
+            <Text text="{ConsignmentModel>VBELN_DL}"/>
+            <Text text="{ConsignmentModel>STATUS_DL}"/>
+            <Text text="{ConsignmentModel>BILLNO}"/>
+            <Text text="{ConsignmentModel>STATUS_BL}"/>
+            <!-- <Text text="{ConsignmentModel>GJAHR}"/>
+            <Text text="{ConsignmentModel>BUKRS}"/> -->
+        </cells>
+    </ColumnListItem>
+
+    </Table>
+</ScrollContainer>
+
+    </Page>
+</mvc:View>

@@ -1,0 +1,94 @@
+<mvc:View controllerName="haneya.controller.HeadTiles"
+    xmlns:l="sap.ui.layout" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="Titlepageid"
+        title=""
+        enableScrolling="true">
+
+        <FlexBox 
+            wrap="Wrap"
+            width="100%"
+           
+            visible="false"
+            id="idoneU"
+            renderType="Div">
+            <Text text=""></Text>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Functional Conflicts" 
+                mode="ActionMode"
+                press="onsubtile">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="Cloned Objects" 
+                mode="ActionMode" 
+                press="onclone">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Custom Enhancement" 
+                mode="ActionMode" 
+                press="oncust">
+            </GenericTile>
+
+        </FlexBox>
+        <FlexBox 
+            wrap="Wrap"
+            width="100%"
+            visible="false"
+             id="idtwoU"
+            renderType="Div">
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Functional Conflicts" 
+                mode="ActionMode" 
+                press="onsubtile">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Unicode Conversions" 
+                mode="ActionMode" 
+                press="onunic">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Cloned Objects" 
+                mode="ActionMode" 
+                press="oncloneobj">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Custom Enhancement"  
+                mode="ActionMode" 
+                press="oncustenh">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="OXK1 Sub-Screen Generation"
+                mode="ActionMode" 
+                press="onoxk1">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Custom Fields Assessment"
+                mode="ActionMode" 
+                press="oncustfass">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Custom Fields Remediation"
+                mode="ActionMode" 
+                press="oncustfrem">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Variants Remediation"
+                mode="ActionMode" 
+                press="onvarrem">
+            </GenericTile>
+        </FlexBox>
+    </Page>
+</mvc:View>

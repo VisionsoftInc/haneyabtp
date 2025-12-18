@@ -1,0 +1,39 @@
+<mvc:View controllerName="haneya.controller.AiProcessAutomationSS"
+    xmlns:l="sap.ui.layout" 
+    xmlns:f="sap.ui.layout.form" 
+	xmlns:u="sap.ui.unified"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="Inter Company Sales Event Based">
+
+        <VBox class="bigBlackBox" justifyContent="Start" alignItems="Start">
+            <Text text="Select Date Range: " class="selecttext"></Text>
+            <HBox height="30%" alignItems="Center" gap="2%" class="datebox">
+                <Label text="Date :" labelFor="DRS1" design="Bold"/>
+		        <DateRangeSelection
+			        id="DRS1"
+			        delimiter="{path:'/delimiterDRS1'}"
+			        dateValue="{path:'/dateValueDRS1'}"
+			        secondDateValue="{path:'/secondDateValueDRS1'}"
+			        displayFormat="{path:'/dateFormatDRS1'}"
+			        change="handleChange"/>
+            </HBox>
+            <HBox >
+                <RadioButtonGroup id="rbGroup" columns="1" selectedIndex="0" >
+                    <RadioButton id="rbSuccess" text="Success" />
+                    <RadioButton id="rbFailed"  text="Failed" />
+                    <RadioButton id="rbAll"     text="All"/>
+                </RadioButtonGroup>
+            </HBox>
+    
+
+        </VBox>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                    <Button text="Execute" type="Emphasized" press="OnExecute" />
+            </Toolbar>
+        </footer>
+    </Page>
+
+</mvc:View>

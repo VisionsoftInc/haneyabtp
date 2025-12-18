@@ -1,0 +1,48 @@
+<mvc:View
+    controllerName="haneya.controller.AiRPAConsignmentSalesSS"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:u="sap.ui.unified">
+
+    <Page title="Inter Company Sales Consignment">
+        <VBox class="BigBox" justifyContent="Center">
+            <Text text="Selection Criteria: " class="SelectionText"></Text>
+            <VBox class="BigBox" alignItems="Start" justifyContent="Center">
+            <RadioButtonGroup id="rbGroup2" select="onSourceChange">
+                <RadioButton text="Third Party" ></RadioButton>
+                <RadioButton text="Local File"></RadioButton>
+            </RadioButtonGroup>
+
+            <HBox id="FilePath" visible="true" class="filebox" alignItems="Center">
+                <Label text="File Path :" class="labelText"></Label>
+                <Text text="/tmp/Inter_company_stock_20251203.txt" ></Text>
+            </HBox>
+
+            <HBox id="UploadFile" visible="false" class="filebox" alignItems="Center">
+                <Label text="Upload File Name :" class="labelText"></Label>
+                <!-- <u:FileUploader
+                        id="FileUploader"
+                        name="myFileUpload"
+                        width="300px"
+                        tooltip="Upload your file"
+                        uploadComplete="handleUploadComplete"/> -->
+                <Button text="Upload Excel" icon="sap-icon://upload" press=".onSelectExcel" />
+                <!-- <Button text="Send JSON to Backend" icon="sap-icon://process" press=".onSendJson" />         -->
+            </HBox>
+        </VBox>
+        <HBox >
+            <CheckBox  id="chkSimulate" text="Simulate"></CheckBox>
+        </HBox>
+        </VBox>
+        
+        <!-- Footer -->
+        <footer>
+            <Toolbar class="footerToolbar">
+                <ToolbarSpacer/>
+                <Button text="Execute" type="Emphasized" press=".onSendJson"/>
+            </Toolbar>
+        </footer>
+
+    </Page>
+</mvc:View>

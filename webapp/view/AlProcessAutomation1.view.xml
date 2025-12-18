@@ -1,0 +1,82 @@
+<mvc:View controllerName="haneya.controller.AlProcessAutomation1"
+    xmlns:l="sap.ui.layout" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+      <Page showHeader="false" showFooter="true" class="sapUiSizeCompact">
+       <OverflowToolbar>
+            <Button icon="sap-icon://save" text="Save as variant" tooltip="Save as variant" />
+            <Button icon="sap-icon://course-book" tooltip="Get variant" />
+            <MenuButton text="more" tooltip="more">
+                <menu>
+                    <Menu itemSelected="onItemSelect1">
+                        <MenuItem text="Execute and Print" />
+                        <MenuItem text="Cancel" />
+                    </Menu>
+                </menu>
+            </MenuButton>
+            <ToolbarSpacer/> 
+            <Button text="Exit" />
+        </OverflowToolbar>
+
+       <VBox >
+        <VBox class="bigBlackBox" >
+           <Title text="Process Mode:" level="H2" textAlign="Left"></Title>
+           <CheckBox text="Automitic" selected="true"></CheckBox>
+        </VBox>
+        <VBox  class="bigBlackBox" >
+         <Title text="List of Business Process:" level="H2" textAlign="Left"></Title>
+        	<RadioButtonGroup id="rbg1" selectedIndex="2" class="sapUiMediumMarginBottom">
+			<RadioButton id="RB1-1" text="O2C 010 - Self Collect:" />
+			<RadioButton id="RB1-2" text="O2C 020 - Delivered:" />
+			<RadioButton id="RB1-3" text="O2C 030 - Down Payment:" />
+            <RadioButton id="RB1-4" text="O2C 040 - Pay.post 30D's:" />
+			<RadioButton id="RB1-5" text="O2C 050 - Consignment Sale:" />
+			<RadioButton id="RB1-6" text="O2C 060 - Sub-contracting Sale:" />
+            <RadioButton id="RB1-7" text="O2C 070 - Diff.Cust.type:" />
+			<RadioButton id="RB1-8" text="O2C 080 - Drop Ship Sales:" />
+			<RadioButton id="RB1-9" text="O2C 090 - Drop Ship Inter Comp:" />
+           <RadioButton id="RB1-10" text="O2C 100 - Inter Company Sales:" />
+			<RadioButton id="RB1-11" text="O2C 110 - Sales Product BOM:" />
+			<RadioButton id="RB1-12" text="O2C 120 - Free Goods:" />
+            <RadioButton id="RB1-13" text="O2C 130 - Inter Com Event Base:" />
+           <RadioButton id="RB1-14" text="STP 010 - RAW Material:" />
+			<RadioButton id="RB1-15" text="STP 020 - MRO Item/spare parts: " />
+			<RadioButton id="RB1-16" text="STP 030 - Consumables:" />
+            <RadioButton id="RB1-17" text="STP 040 - GI for Scrapping:" />
+           <RadioButton id="RB1-18" text="STP 050 - GI for Maint. Order:" />
+			<RadioButton id="RB1-19" text="STP 060 - Physical count and ADJ:" />
+			<RadioButton id="RB1-20" text="STP 070 - Inter Comp. Stock Tran" />
+		</RadioButtonGroup>
+        </VBox>
+        <VBox  class="bigBlackBox"  >
+         <Title text="Data Selection:" level="H2" textAlign="Left"></Title>
+        	<RadioButtonGroup id="rbg2" selectedIndex="1" class="sapUiMediumMarginBottom">
+			<RadioButton id="RB2-1" text="Upload file from Appl.Server:" />
+			<RadioButton id="RB2-2" text="Upload file from flat file:" />
+		</RadioButtonGroup>
+        </VBox>
+         <VBox class="bigBlackBox"  >
+         <Title text="Job Type:" level="H2" textAlign="Left"></Title>
+        	<RadioButtonGroup id="rbg3" selectedIndex="1" class="sapUiMediumMarginBottom">
+			<RadioButton id="RB3-1" text="Background(Recommended):" />
+			<RadioButton id="RB3-2" text="Foreground:" />
+		</RadioButtonGroup>
+        </VBox>
+         <VBox class="bigBlackBox"   >
+         <Title text="Testing Report Summary/Dashboard:" level="H2" textAlign="Left"></Title>
+        	<RadioButtonGroup id="rbg4" selectedIndex="1" class="sapUiMediumMarginBottom">
+			<RadioButton id="RB4-1" text="Spool(Recommended)" />
+			<RadioButton id="RB4-2" text="Download in Excel file:" />
+            <RadioButton id="RB4-3" text="Download in to Appl. Server:" />
+		</RadioButtonGroup>
+        </VBox>
+     </VBox>
+        <footer>
+        <Toolbar>
+            <ToolbarSpacer/>
+                <Button text="Execute" type="Emphasized" press="onExecte" />
+        </Toolbar>
+        </footer>
+      </Page>
+    </mvc:View>

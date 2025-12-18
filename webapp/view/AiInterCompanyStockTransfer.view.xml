@@ -1,0 +1,47 @@
+<mvc:View
+    controllerName="haneya.controller.AiInterCompanyStockTransfer"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:u="sap.ui.unified">
+
+    <Page title="Inter Company Stock Transfer">
+        <VBox class="BigBox" justifyContent="Center">
+            <Text text="Selection Criteria: " class="SelectionText"></Text>
+            <VBox class="BigBox" alignItems="Start" justifyContent="Center">
+            <RadioButtonGroup id="rbGroup1" select="onSourceChange">
+                <RadioButton text="Third Party" ></RadioButton>
+                <RadioButton text="Local File"></RadioButton>
+            </RadioButtonGroup>
+
+            <HBox id="hbFilePath" visible="true" class="filebox" alignItems="Center">
+                <Label text="File Path :" class="labelText"></Label>
+                <Text text="{fileModel>/filePath}" ></Text>
+            </HBox>
+
+            <HBox id="hbUploadFile" visible="false" class="filebox" alignItems="Center">
+                <Label text="Upload File Name :" class="labelText"></Label>
+                <u:FileUploader
+                        id="fileUploader"
+                        name="myFileUpload"
+                        width="300px"
+                        tooltip="Upload your file"
+                        change="onFileSelected" 
+                        uploadUrl=""/>
+            </HBox>
+        </VBox>
+        <HBox >
+            <CheckBox id="simulateCheckBox" text="Simulate"></CheckBox>
+        </HBox>
+        </VBox>
+        
+        <!-- Footer -->
+        <footer>
+            <Toolbar class="footerToolbar">
+                <ToolbarSpacer/>
+                <Button text="Execute" type="Emphasized" press="onExecutePress"/>
+            </Toolbar>
+        </footer>
+
+    </Page>
+</mvc:View>

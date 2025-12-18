@@ -1,0 +1,15 @@
+.bigBlackBox {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    background-color: white; 
+    display: flex;
+    justify-content: left;
+}
+.bigDarkText {
+    font-size: 18px;
+    color: #1a1a1a;
+    margin-left: 20px;
+    margin-top: 35px;
+}

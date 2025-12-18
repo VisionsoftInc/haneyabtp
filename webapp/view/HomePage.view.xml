@@ -1,0 +1,61 @@
+<mvc:View controllerName="haneya.controller.HomePage"
+    xmlns:l="sap.ui.layout" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page 
+        title="Haneya tool in BTP"
+        enableScrolling="true">
+        <customHeader>
+        <OverflowToolbar>
+            <MenuButton text="Upgrade" >
+                <menu>
+                    <Menu itemSelected="onItemSelect">
+                        <MenuItem text="ECC->S/4HANA 2022" id="idone" ></MenuItem>
+                        <MenuItem text="ECC->S/4HANA 2023" id="idtwo" ></MenuItem>
+                    </Menu>
+                </menu>
+            </MenuButton>
+            <MenuButton text="Migration">
+                <menu>
+                    <Menu>
+                        <MenuItem text="ECC->S/4 HANA 2023"></MenuItem>
+                        <MenuItem text="S/4 HANA 2023 -> 2025"></MenuItem>
+                        <MenuItem text="ECC -> S/4 HANA 2025"></MenuItem>
+                          <MenuItem text="Public Cloud -> Private Cloud"></MenuItem>
+                        <MenuItem text="Private Cloud -> Public Cloud"></MenuItem>
+                    </Menu>
+                </menu>
+            </MenuButton>
+            <MenuButton text="Business Automation">
+                <menu>
+                    <Menu>
+                        <MenuItem text="AI Process Automation" press="onAiProcessAutomation"></MenuItem>
+                        <MenuItem text="SAP Testing Automation"></MenuItem>
+                        <MenuItem text="Haneya Configuration">
+                            <MenuItem text="AI/RPA Configuration"></MenuItem>
+                            <MenuItem text="AI RPA STO Lanes"></MenuItem>
+                        </MenuItem>
+                    </Menu>
+                </menu>
+            </MenuButton>
+            <MenuButton text="Post Migration">
+                <menu>
+                    <Menu>
+                        <MenuItem text="Table Consistency Check and Repair"></MenuItem>
+                        <MenuItem text="System Copy Adjustments"></MenuItem>
+                        <MenuItem text="Configuration Task List"></MenuItem>
+                        <MenuItem text="data Cleansing"></MenuItem>
+                        <MenuItem text="Final Conflict Check"></MenuItem>
+                        <MenuItem text="Landscape transformation"></MenuItem>
+                        <MenuItem text="Training Plan"></MenuItem>
+                    </Menu>
+                </menu>
+            </MenuButton>
+        </OverflowToolbar>
+       </customHeader> 
+
+        <Image src="{imageModel>/src}" width="100%" height="100%" />
+        
+    </Page>
+</mvc:View>

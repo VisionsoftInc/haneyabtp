@@ -1,0 +1,82 @@
+<mvc:View controllerName="haneya.controller.AiProcessAutomationHeadTile"
+    xmlns:l="sap.ui.layout" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page title="Business Automation -> Al ProcessAutomation"
+        enableScrolling="true">
+        
+        <HBox>
+            <FlexBox id="headTileContainer"
+                    wrap="Wrap"
+                    width="100%"
+                    renderType="Div">
+                
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Order to Cash(O2C)"
+                        press="OnHeadTile">
+                        <customData>
+                            <core:CustomData key="group" value="O2C"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                        header="Stock Transfer Plant(STP)"
+                        press="OnHeadTile">
+                        <customData>
+                            <core:CustomData key="group" value="STP"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Period to Date(PTP)"
+                        press="OnHeadTile">
+                        <customData>
+                            <core:CustomData key="group" value="PTD"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Hire to Retire(HTR)"
+                        press="OnHeadTile">
+                        <customData>
+                            <core:CustomData key="group" value="HTR"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Record to Report(RTR)"
+                        press="OnHeadTile">
+                        <customData>
+                            <core:CustomData key="group" value="RTR"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Enterprise Asset Management(EAM)"
+                        press="OnHeadTile">
+                        <customData>
+                            <core:CustomData key="group" value="EAM"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Environment, Health, and Safety Management(EHSM)"
+                        press="OnHeadTile">
+                        <customData>
+                            <core:CustomData key="group" value="EHSM"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Project Portfolio Management(PPM)"
+                        press="OnHeadTile">
+                        <customData>
+                            <core:CustomData key="group" value="PPM"/>
+                        </customData>
+                    </GenericTile>
+            </FlexBox>
+        </HBox>
+    </Page>
+</mvc:View>

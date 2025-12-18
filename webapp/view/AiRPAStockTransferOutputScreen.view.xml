@@ -1,0 +1,94 @@
+<mvc:View
+    controllerName="haneya.controller.AiRPAStockTransferOutputScreen"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:smartTable="sap.ui.comp.smarttable">
+
+    <Page title="AI Process Automation Output">
+        
+        <!-- Toolbar with Refresh Button -->
+        <headerContent>
+            <Button
+                text="Reprocess"
+                press="onReprocessPress"/>
+        </headerContent>
+    <ScrollContainer
+        horizontal="true">
+        <!-- Table to display Function Import data -->
+        <Table
+            id="outputTable"
+            inset="false"
+            headerText="Inter Company Stock Transfer Data"
+            items="{
+                path: 'tableModel>/records'}"
+            width="auto"
+            growing="true"
+            mode="MultiSelect">
+
+    <!-- Define Columns -->
+    <columns >
+        <Column width="8rem"><Text text="BillAccNo"/></Column>
+        <Column width="8rem"><Text text="BillNum"/></Column>
+        <Column width="8rem"><Text text="DelNumber"/></Column>
+        <Column width="8rem"><Text text="DistCenter"/></Column>
+        <Column width="8rem"><Text text="FileId"/></Column>
+        <Column width="8rem"><Text text="FileName"/></Column>
+        <Column width="8rem"><Text text="GrAccNo"/></Column>
+        <Column width="8rem"><Text text="GrNumber"/></Column>
+        <Column width="8rem"><Text text="Icon"/></Column>
+        <Column width="8rem"><Text text="InvAccNo"/></Column>
+        <Column width="8rem"><Text text="InvNumber"/></Column>
+        <Column width="10rem"><Text text="LaneSt"/></Column>
+        <Column width="8rem"><Text text="MainId"/></Column>
+        <Column width="8rem"><Text text="PgiAccNo"/></Column>
+        <Column width="8rem"><Text text="PgiStatus"/></Column>
+        <Column width="8rem"><Text text="Plant"/></Column>
+        <Column width="8rem"><Text text="PoNumber"/></Column>
+        <Column width="8rem"><Text text="Product"/></Column>
+        <Column width="8rem"><Text text="Quantity"/></Column>
+        <Column width="8rem"><Text text="Sel"/></Column>
+        <Column width="8rem"><Text text="StatusBill"/></Column>
+        <Column width="8rem"><Text text="StatusDel"/></Column>
+        <Column width="8rem"><Text text="StatusGr"/></Column>
+        <Column width="8rem"><Text text="StatusInv"/></Column>
+        <Column width="8rem"><Text text="StatusPo"/></Column>
+        <Column width="8rem"><Text text="SubId"/></Column>
+    </columns>
+
+    <!-- Template for each row -->
+    <ColumnListItem>
+        <cells>
+            <Text text="{tableModel>BillAccNo}"/>
+            <Text text="{tableModel>BillNum}"/>
+            <Text text="{tableModel>DelNumber}"/>
+            <Text text="{tableModel>DistCenter}"/>
+            <Text text="{tableModel>FileId}"/>
+            <Text text="{tableModel>FileName}"/>
+            <Text text="{tableModel>GrAccNo}"/>
+            <Text text="{tableModel>GrNumber}"/>
+            <Text text="{tableModel>Icon}"/>
+            <Text text="{tableModel>InvAccNo}"/>
+            <Text text="{tableModel>InvNumber}"/>
+            <Text text="{tableModel>LaneSt}"/>
+            <Text text="{tableModel>MainId}"/>
+            <Text text="{tableModel>PgiAccNo}"/>
+            <Text text="{tableModel>PgiStatus}"/>
+            <Text text="{tableModel>Plant}"/>
+            <Text text="{tableModel>PoNumber}"/>
+            <Text text="{tableModel>Product}"/>
+            <Text text="{tableModel>Quantity}"/>
+            <Text text="{tableModel>Sel}"/>
+            <Text text="{tableModel>StatusBill}"/>
+            <Text text="{tableModel>StatusDel}"/>
+            <Text text="{tableModel>StatusGr}"/>
+            <Text text="{tableModel>StatusInv}"/>
+            <Text text="{tableModel>StatusPo}"/>
+            <Text text="{tableModel>SubId}"/>
+        </cells>
+    </ColumnListItem>
+
+    </Table>
+</ScrollContainer>
+
+    </Page>
+</mvc:View>

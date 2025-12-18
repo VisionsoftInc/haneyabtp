@@ -1,0 +1,55 @@
+<mvc:View controllerName="haneya.controller.SubTiles"
+    xmlns:l="sap.ui.layout" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page 
+        title="Functional Conflicts"
+        enableScrolling="true">
+
+        <FlexBox 
+            visible="true"
+            wrap="Wrap"
+            width="100%"
+            renderType="Div">
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="SPAU/SPDD Conflicts" 
+                mode="ActionMode" 
+                press="onspau">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="SPAU/SPDD Automation" 
+                mode="ActionMode" 
+                press="">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Custom Objects Conflicts" 
+                mode="ActionMode" 
+                press="oncustomobjectsconflicts">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="HANA Compatibility" 
+                mode="ActionMode" 
+                press="">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Upgrade Conflicts Remediation" 
+                mode="ActionMode" 
+                press="">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Function Module Remediation" 
+                mode="ActionMode" 
+                press="">
+            </GenericTile>
+
+        </FlexBox>
+        
+    </Page>
+</mvc:View>

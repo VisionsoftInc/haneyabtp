@@ -1,0 +1,394 @@
+<mvc:View controllerName="haneya.controller.AiProcessAutomationSubTile"
+    xmlns:l="sap.ui.layout" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page id="mainpage"
+          title="Al ProcessAutomation"
+        enableScrolling="true">
+        <HBox>
+            <FlexBox id="tileContainer"
+                    wrap="Wrap"
+                    width="100%"
+                    renderType="Div">
+                    
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Self Collect"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="O2C"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                        header="Delivered"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="O2C"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Down Payment"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="O2C"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Pay.post 30D's"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="O2C"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Consignment Sale"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="O2C"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Inter Company Sales Consignment"
+                        press="OnConsignment">
+                        <customData>
+                            <core:CustomData key="group" value="O2C"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Sub-contracting Sale"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="O2C"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Diff.Cust. type"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="O2C"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Drop Ship Sales"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="O2C"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Drop Ship Inter comp"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="O2C"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Inter Company Sales"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="O2C"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Sales product BOM"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="O2C"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Free Goods"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="O2C"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Inter Company Sales Event Base"
+                        press="OnProgram">
+                        <customData>
+                            <core:CustomData key="group" value="O2C"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="RAW Materials"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="STP"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="MRO item/spare parts"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="STP"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Consumables"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="STP"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="GI for Scrapping"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="STP"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="GI for Maint. Order"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="STP"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Physical count and ADJ"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="STP"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Inter Company Stock Transfer"
+                        press="OnInterCompStockTran">
+                        <customData>
+                            <core:CustomData key="group" value="STP"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Inter Company Returns"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="STP"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="3rd party"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="PTD"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Assemblies"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="PTD"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Sub-assemblies"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="PTD"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Hire to Retire"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="HTR"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Payroll Run"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="HTR"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="GL Balances"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="RTR"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Asset Balances"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="RTR"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Costing work sheets"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="RTR"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Closing Process"
+                        press="">
+                        <customData>
+                            <core:CustomData key="group" value="RTR"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Financial Reporting"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="RTR"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Manpower using in MO"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="EAM"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Stock Material issue"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="EAM"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Service Prourement"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="EAM"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Maintenance Order"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="EAM"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Funds management"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="EAM"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Settlement of Order"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="EAM"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Incident Reporting"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="EHSM"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Near Miss Reporting"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="EHSM"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Safety Management"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="EHSM"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Change Requests"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="EHSM"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Task Management"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="EHSM"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Planning Process"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="PPM"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Project execution"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="PPM"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Project Control"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="PPM"/>
+                        </customData>
+                    </GenericTile>
+
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                        header="Project  Closure"
+                        press=".onTilePress">
+                        <customData>
+                            <core:CustomData key="group" value="PPM"/>
+                        </customData>
+                    </GenericTile>
+            </FlexBox>
+        </HBox>
+    </Page>
+</mvc:View>

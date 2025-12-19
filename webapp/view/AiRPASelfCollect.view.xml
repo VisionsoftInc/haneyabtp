@@ -1,0 +1,14 @@
+<mvc:View xmlns:m="sap.m"
+ controllerName="haneya.controller.AiRPASelfCollect"
+ xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+>
+  <Page title="Self Collect"> 
+  <m:Title ></m:Title>
+
+
+  </Page>
+
+
+
+</mvc:View>

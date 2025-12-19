@@ -24,10 +24,18 @@ sap.ui.define([
                this.setModel( oExcelPayloadModel, "ExcelPayloadModel");
                 var oConsignmentPayloadModel = new JSONModel({});
                this.setModel( oConsignmentPayloadModel, "ConsignmentModel");
+
                 var oUIModel = new sap.ui.model.json.JSONModel({
                   simulate: false
                  });
                 this.setModel(oUIModel, "ui");
+
+                var oUiLoadingStatus = new JSONModel({
+                     busy: false
+                });
+               this.setModel( oUiLoadingStatus, "UiLoadingStatus");
+               
+
             this.getRouter().initialize();
         }
     });

@@ -5,7 +5,8 @@ sap.ui.define([
     
     return Controller.extend("haneya.controller.AiProcessAutomationSS", {
         onInit() {
-             jQuery.sap.includeStyleSheet(sap.ui.require.toUrl("haneya/view/AiProcessAutomationSS.view.css"));
+            this.oUiModel= this.getOwnerComponent().getModel("UiLoadingStatus");
+            jQuery.sap.includeStyleSheet(sap.ui.require.toUrl("haneya/view/AiProcessAutomationSS.view.css"));
         },
        
         OnExecute: function() {

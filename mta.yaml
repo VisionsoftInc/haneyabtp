@@ -27,16 +27,16 @@ modules:
       - haneya.zip
       name: haneya
       target-path: resources/
-- name: haneya-app-content
-  type: com.sap.application.content
-  path: .
-  requires:
-  - name: haneya-repo-host
-    parameters:
-      content-target: true
-  build-parameters:
-    build-result: resources
-    requires: []
+# - name: haneya-app-content
+#   type: com.sap.application.content
+#   path: .
+#   requires:
+#   - name: haneya-repo-host
+#     parameters:
+#       content-target: true
+#   build-parameters:
+#     build-result: resources
+#     requires: []
 resources:
 - name: haneya-html5-repo-runtime
   type: org.cloudfoundry.managed-service

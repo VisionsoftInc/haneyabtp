@@ -1,5 +1,5 @@
 {
-  "xsappname": "haneya",
+  "xsappname": "haneya-fiori",
   "tenant-mode": "dedicated",
   "description": "Security profile of called application",
   "scopes": [],

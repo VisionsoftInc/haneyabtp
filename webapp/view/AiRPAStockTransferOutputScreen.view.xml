@@ -2,9 +2,10 @@
     controllerName="haneya.controller.AiRPAStockTransferOutputScreen"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
+    	
     xmlns:smartTable="sap.ui.comp.smarttable">
 
-    <Page title="AI Process Automation Output">
+    <Page title="Inter Company Stock Transfer">
         
         <!-- Toolbar with Refresh Button -->
         <headerContent>
@@ -23,7 +24,8 @@
                 path: 'tableModel>/records'}"
             width="auto"
             growing="true"
-            mode="MultiSelect">
+            mode="MultiSelect"
+            >
 
     <!-- Define Columns -->
     <columns >
@@ -51,7 +53,7 @@
         <Column width="8rem"><Text text="StatusDel"/></Column>
         <Column width="8rem"><Text text="StatusGr"/></Column>
         <Column width="8rem"><Text text="StatusInv"/></Column>
-        <Column width="8rem"><Text text="StatusPo"/></Column>
+        <Column width="18rem"><Text text="StatusPo"/></Column>
         <Column width="8rem"><Text text="SubId"/></Column>
     </columns>
 

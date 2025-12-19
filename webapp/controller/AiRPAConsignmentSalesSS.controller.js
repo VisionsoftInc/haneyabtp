@@ -8,6 +8,7 @@ sap.ui.define([
     return Controller.extend("haneya.controller.AiRPAConsignmentSalesSS", {
 
         onInit: function () {
+          this.oUiModel= this.getOwnerComponent().getModel("UiLoadingStatus");
             jQuery.sap.includeStyleSheet(sap.ui.require.toUrl("haneya/view/AiRPAConsignmentSalesSS.view.css"));
             this._excelData = []; // Store JSON here
               this.oModel = this.getOwnerComponent().getModel("aiprocess");
@@ -101,6 +102,7 @@ sap.ui.define([
     // STEP 3: Send JSON to Backend OData POST
     onSendJson() {
         debugger
+      
          var oExcelPayload = this.getOwnerComponent().getModel("ExcelPayloadModel");
         let bSimulate = this.byId("chkSimulate").getSelected();  
       if (this._excelData.length === 0) {
@@ -118,11 +120,15 @@ sap.ui.define([
  
     //   const oModel = this.getOwnerComponent().getModel("ConsignmentModel");
     //   this.oModel = this.getOwnerComponent().getModel("ConsignmentModel");
- 
+     this.getOwnerComponent()
+    .getModel("UiLoadingStatus")
+    .setProperty("/busy", true);
      this.oModel.create("/Sales_ConsignmentSet", payload1, {
           success: (oData, response) => {
+             
             console.log("Success Data:", oData);
             console.log("Full Response:", response.data.payload);
+            this.oUiModel.setProperty("/busy", false);
             sap.m.MessageToast.show("JSON sent successfully");
             debugger
             var payload= JSON.parse(response.data.payload)
@@ -141,6 +147,7 @@ sap.ui.define([
         },
         error: (err) => {
           //console.error(err);
+           this.oUiModel.setProperty("/busy", false);
           sap.m.MessageToast.show("Failed to send JSON");
         }
       });

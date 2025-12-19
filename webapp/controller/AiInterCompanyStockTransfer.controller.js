@@ -55,22 +55,24 @@ sap.ui.define([
             this.byId("hbUploadFile").setVisible(iIndex === 1);
         },
 
+        // File Selection
         onFileSelected: function (oEvent) {
-    var oFile = oEvent.getParameter("files")[0];
+            var oFile = oEvent.getParameter("files")[0];
 
-    if (!oFile.type.includes("spreadsheet") && !oFile.name.endsWith(".xlsx")) {
-        MessageToast.show("Please select a valid Excel file");
-        return;
-    }
+            if (!oFile.type.includes("spreadsheet") && !oFile.name.endsWith(".xlsx")) {
+                MessageToast.show("Please select a valid Excel file");
+                return;
+            }
 
-    // ✅ Store file reference for later use
-    this._oSelectedFile = oFile;
+            // Store file reference for later use
+            this._oSelectedFile = oFile;
 
-    MessageToast.show("File selected: " + oFile.name);
-    console.log("Selected file:", oFile);
-},
+            MessageToast.show("File selected: " + oFile.name);
+            console.log("Selected file:", oFile);
+        },
         // Execute Button
         onExecutePress: function () {
+            debugger
 
             var iIndex = this.byId("rbGroup1").getSelectedIndex();
             var oResultModel = sap.ui.getCore().getModel("stockTransferResultModel");
@@ -133,82 +135,75 @@ sap.ui.define([
 }
 
             // CASE 2: LOCAL FILE UPLOAD
-            if (iIndex === 1) { // Local File
+            if (iIndex === 1) {
     if (!this._oSelectedFile) {
-        MessageToast.show("Please select a file first");
+        sap.m.MessageToast.show("Please select a file first");
         return;
     }
 
-    var oFile = this._oSelectedFile;
-    var bSimulate = this.byId("simulateCheckBox").getSelected(); 
+    let bSimulate = this.byId("simulateCheckBox").getSelected();
     var oReader = new FileReader();
     var oModel = this.getOwnerComponent().getModel("stockTransferModel");
-    var oResultModel = sap.ui.getCore().getModel("stockTransferResultModel");
+
+    this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", true);
 
     oReader.onload = function (oEvent) {
-        var aBinaryData = oEvent.target.result; // ArrayBuffer
+        var aBinaryData = oEvent.target.result;
 
-        console.log("File Name:", oFile.name);
-        console.log("Mime Type:", oFile.type);
-        console.log("Binary Size:", aBinaryData.byteLength);
-        console.log("Simulation flag:", bSimulate);
+        // Read Excel and convert directly to JSON
+        var oWorkbook = XLSX.read(aBinaryData, { type: "array" });
+        var sSheetName = oWorkbook.SheetNames[0];
+        var oWorksheet = oWorkbook.Sheets[sSheetName];
 
-        // ✅ Parse Excel using SheetJS (XLSX)
-        sap.ui.require(["my/app/lib/xlsx"], function (XLSX) {
-            var oWorkbook = XLSX.read(aBinaryData, { type: "array" });
-
-            // Read first sheet
-            var sSheetName = oWorkbook.SheetNames[0];
-            var oWorksheet = oWorkbook.Sheets[sSheetName];
-
-            // Convert sheet to JSON
-            var aExcelData = XLSX.utils.sheet_to_json(oWorksheet, {
-                defval: "", // avoid undefined
-                raw: false  // formatted values
-            });
-
-            console.log("Excel JSON Data:", aExcelData);
-
-            if (!aExcelData.length) {
-                MessageToast.show("Excel file is empty");
-                return;
-            }
-
-            // ✅ Prepare payload for backend
-            var oPayload = {
-                FileName: oFile.name,
-                Simulation: bSimulate,
-                Records: aExcelData
-            };
-
-            console.log("Payload sent to FileSet:", oPayload);
-
-            // ✅ Send JSON payload to backend
-            oModel.create("/FileSet", oPayload, {
-                success: function (oResponse) {
-                    var aRecords = Array.isArray(oResponse?.results)
-                        ? oResponse.results
-                        : [oResponse];
-
-                    oResultModel.setData({ records: aRecords });
-                    oResultModel.refresh(true);
-
-                    MessageToast.show("Excel processed successfully");
-                },
-                error: function (oError) {
-                    console.error("Upload failed:", oError);
-                    MessageToast.show("Upload failed");
-                }
-            });
+        // Convert sheet to JSON directly
+        var aExcelData = XLSX.utils.sheet_to_json(oWorksheet, {
+            defval: "",   // empty cells become ""
+            raw: true     // keep numbers as numbers
         });
+
+        if (!aExcelData.length) {
+            sap.m.MessageToast.show("Excel file is empty");
+            this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", false);
+            return;
+        }
+
+        // Build payload like onSendJson()
+        var payload = {
+            payload: JSON.stringify(aExcelData),  // pure JSON as string
+            Simulate: bSimulate ? "X" : ""
+        };
+
+        console.log("FINAL PAYLOAD:", payload);
+
+        oModel.create("/FileSet", payload, {
+            success: function (oData, response) {
+                sap.m.MessageToast.show("Excel JSON sent successfully");
+
+                // backend returning payload as string
+                if (response?.data?.payload) {
+                    var parsed = JSON.parse(response.data.payload);
+                    var oResultModel = new sap.ui.model.json.JSONModel({
+                        records: parsed
+                    });
+                    sap.ui.getCore().setModel(oResultModel, "stockTransferResultModel");
+                }
+
+                this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", false);
+            }.bind(this),
+            error: function (err) {
+                this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", false);
+                sap.m.MessageToast.show("Upload failed");
+            }.bind(this)
+        });
+
     }.bind(this);
 
     oReader.onerror = function () {
-        MessageToast.show("File read failed");
-    };
+        sap.m.MessageToast.show("File read failed");
+        this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", false);
+    }.bind(this);
 
-    // Read Excel as ArrayBuffer
-    oReader.readAsArrayBuffer(oFile);
+    oReader.readAsArrayBuffer(this._oSelectedFile);
 }
 
             MessageToast.show("Please select Third Party or Local File");

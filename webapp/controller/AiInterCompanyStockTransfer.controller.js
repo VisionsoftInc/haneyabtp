@@ -8,7 +8,7 @@ sap.ui.define([
     return Controller.extend("haneya.controller.AiInterCompanyStockTransfer", {
 
         onInit: function () {
-
+            this.oUiModel= this.getOwnerComponent().getModel("UiLoadingStatus");
             // Load CSS
             jQuery.sap.includeStyleSheet(
                 sap.ui.require.toUrl("haneya/view/AiInterCompanyStockTransfer.view.css")
@@ -92,7 +92,7 @@ sap.ui.define([
     var oFunctionInput = {
         Simulation: bSimulate
     };
-
+     this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", true);
     oModel.metadataLoaded().then(function () {
 
         // ✅ Now this works
@@ -104,7 +104,8 @@ sap.ui.define([
 
             success: function (oResponse) {
                 console.log("Third Party Response:", oResponse);
-
+                
+                this.oUiModel.setProperty("/busy", false);
                 var aRecords = [];
                 if (Array.isArray(oResponse?.results)) {
                     aRecords = oResponse.results;
@@ -124,6 +125,8 @@ sap.ui.define([
             }.bind(this),
 
             error: function (oError) {
+                
+            this.oUiModel.setProperty("/busy", true);
                 console.error("Function Import Error:", oError);
                 MessageToast.show("Third Party execution failed");
             }
@@ -133,7 +136,6 @@ sap.ui.define([
 
     return;
 }
-
             // CASE 2: LOCAL FILE UPLOAD
             if (iIndex === 1) {
     if (!this._oSelectedFile) {
@@ -145,7 +147,7 @@ sap.ui.define([
     var oReader = new FileReader();
     var oModel = this.getOwnerComponent().getModel("stockTransferModel");
 
-    this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", true);
+    // this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", true);
 
     oReader.onload = function (oEvent) {
         var aBinaryData = oEvent.target.result;
@@ -161,11 +163,11 @@ sap.ui.define([
             raw: true     // keep numbers as numbers
         });
 
-        if (!aExcelData.length) {
-            sap.m.MessageToast.show("Excel file is empty");
-            this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", false);
-            return;
-        }
+        // if (!aExcelData.length) {
+        //     sap.m.MessageToast.show("Excel file is empty");
+        //     this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", false);
+        //     return;
+        // }
 
         // Build payload like onSendJson()
         var payload = {
@@ -188,7 +190,7 @@ sap.ui.define([
                     sap.ui.getCore().setModel(oResultModel, "stockTransferResultModel");
                 }
 
-                this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", false);
+                // this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", false);
             }.bind(this),
             error: function (err) {
                 this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", false);
@@ -200,13 +202,11 @@ sap.ui.define([
 
     oReader.onerror = function () {
         sap.m.MessageToast.show("File read failed");
-        this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", false);
+        // this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", false);
     }.bind(this);
 
     oReader.readAsArrayBuffer(this._oSelectedFile);
 }
-
-            MessageToast.show("Please select Third Party or Local File");
         }
 
     });

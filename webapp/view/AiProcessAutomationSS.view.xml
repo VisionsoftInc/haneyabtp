@@ -4,7 +4,7 @@
 	xmlns:u="sap.ui.unified"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page title="Inter Company Sales Event Based">
+    <Page title="Inter Company Sales Event Based" busy="{UiLoadingStatus>/busy}">
 
         <VBox class="bigBlackBox" justifyContent="Start" alignItems="Start">
             <Text text="Select Date Range: " class="selecttext"></Text>

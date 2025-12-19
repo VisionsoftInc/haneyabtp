@@ -5,7 +5,7 @@
     xmlns:f="sap.ui.layout.form"
     xmlns:u="sap.ui.unified">
 
-    <Page title="Inter Company Stock Transfer">
+    <Page title="Inter Company Stock Transfer" busy="{UiLoadingStatus>/busy}">
         <VBox class="BigBox" justifyContent="Center">
             <Text text="Selection Criteria: " class="SelectionText"></Text>
             <VBox class="BigBox" alignItems="Start" justifyContent="Center">

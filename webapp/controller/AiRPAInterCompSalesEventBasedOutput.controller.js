@@ -60,7 +60,7 @@ sap.ui.define([
 
         onInit: function () {
             this._labelMap = this._labelMap || {};
-
+            this.oUiModel= this.getOwnerComponent().getModel("UiLoadingStatus");
             // Include CSS
             jQuery.sap.includeStyleSheet(
                 sap.ui.require.toUrl("haneya/view/AiRPAInterCompSalesEventBasedOutput.view.css")
@@ -265,7 +265,8 @@ sap.ui.define([
                 delete oData.__metadata;
                 oPayload.NP_ON_SO.push(Object.assign({}, oData));
             });
-
+            
+            this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", true);
             oModel.create("/Sales_orderSet", oPayload, {
                 success: function (data) {
                     let aNewRows = data.NP_ON_SO.results || [];

@@ -29,31 +29,31 @@
 
     <!-- Define Columns -->
     <columns >
-        <Column width="8rem"><Text text="BillAccNo"/></Column>
-        <Column width="8rem"><Text text="BillNum"/></Column>
-        <Column width="8rem"><Text text="DelNumber"/></Column>
-        <Column width="8rem"><Text text="DistCenter"/></Column>
-        <Column width="8rem"><Text text="FileId"/></Column>
-        <Column width="8rem"><Text text="FileName"/></Column>
-        <Column width="8rem"><Text text="GrAccNo"/></Column>
-        <Column width="8rem"><Text text="GrNumber"/></Column>
         <Column width="8rem"><Text text="Icon"/></Column>
-        <Column width="8rem"><Text text="InvAccNo"/></Column>
-        <Column width="8rem"><Text text="InvNumber"/></Column>
-        <Column width="10rem"><Text text="LaneSt"/></Column>
+        <Column width="8rem"><Text text="Sel"/></Column>
+        <Column width="8rem"><Text text="FileId"/></Column>
         <Column width="8rem"><Text text="MainId"/></Column>
-        <Column width="8rem"><Text text="PgiAccNo"/></Column>
-        <Column width="8rem"><Text text="PgiStatus"/></Column>
-        <Column width="8rem"><Text text="Plant"/></Column>
         <Column width="8rem"><Text text="PoNumber"/></Column>
+        <Column width="18rem"><Text text="StatusPo"/></Column>
+        <Column width="8rem"><Text text="DelNumber"/></Column>
+        <Column width="8rem"><Text text="StatusDel"/></Column>
+        <Column width="8rem"><Text text="PgiStatus"/></Column>
+        <Column width="8rem"><Text text="PgiAccNo"/></Column>
+        <Column width="8rem"><Text text="BillNum"/></Column>
+        <Column width="8rem"><Text text="BillAccNo"/></Column>
+        <Column width="8rem"><Text text="StatusBill"/></Column>
+        <Column width="8rem"><Text text="GrNumber"/></Column>
+        <Column width="8rem"><Text text="GrAccNo"/></Column>
+        <Column width="8rem"><Text text="StatusGr"/></Column>
+        <Column width="8rem"><Text text="InvNumber"/></Column>
+        <Column width="8rem"><Text text="InvAccNo"/></Column>
+        <Column width="8rem"><Text text="StatusInv"/></Column>
+        <Column width="8rem"><Text text="DistCenter"/></Column>
+        <Column width="8rem"><Text text="FileName"/></Column>
+        <Column width="10rem"><Text text="LaneSt"/></Column>
+        <Column width="8rem"><Text text="Plant"/></Column>
         <Column width="8rem"><Text text="Product"/></Column>
         <Column width="8rem"><Text text="Quantity"/></Column>
-        <Column width="8rem"><Text text="Sel"/></Column>
-        <Column width="8rem"><Text text="StatusBill"/></Column>
-        <Column width="8rem"><Text text="StatusDel"/></Column>
-        <Column width="8rem"><Text text="StatusGr"/></Column>
-        <Column width="8rem"><Text text="StatusInv"/></Column>
-        <Column width="18rem"><Text text="StatusPo"/></Column>
         <Column width="8rem"><Text text="SubId"/></Column>
     </columns>
 

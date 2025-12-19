@@ -26,16 +26,16 @@
 
     <!-- Define Columns -->
     <columns >
-        <Column width="4rem"><Text text="Select"/></Column>
-        <Column width="8rem"><Text text="ICON"/></Column>
-        <Column width="8rem"><Text text="SEL"/></Column>
+        <Column width="4rem"><Text text="Select" visible="{= !${ui>/simulate} }"/></Column>
+        <Column width="8rem"><Text text="ICON" visible="{= !${ui>/simulate} }"/></Column>
+        <Column width="8rem"><Text text="SEL" visible="{= !${ui>/simulate} }"/></Column>
         <Column width="8rem"><Text text="MAIN_ID"/></Column>
-        <Column width="8rem"><Text text="VBELN_SO"/></Column>
-        <Column width="8rem"><Text text="STATUS_SO"/></Column>
-        <Column width="8rem"><Text text="VBELN_DL"/></Column>
-        <Column width="8rem"><Text text="STATUS_DL"/></Column>
-        <Column width="8rem"><Text text="BILLNO"/></Column>
-        <Column width="8rem"><Text text="STATUS_BL"/></Column>
+        <Column width="8rem"><Text text="VBELN_SO" visible="{= !${ui>/simulate} }"/></Column>
+        <Column width="8rem"><Text text="STATUS_SO" /></Column>
+        <Column width="8rem"><Text text="VBELN_DL" visible="{= !${ui>/simulate} }"/></Column>
+        <Column width="8rem"><Text text="STATUS_DL" visible="{= !${ui>/simulate} }"/></Column>
+        <Column width="8rem"><Text text="BILLNO" visible="{= !${ui>/simulate} }"/></Column>
+        <Column width="8rem"><Text text="STATUS_BL" visible="{= !${ui>/simulate} }"/></Column>
         <!-- <Column width="8rem"><Text text="CELLTAB"/></Column> -->
         <!-- <Column width="8rem"><Text text="GJAHR"/></Column>
         <Column width="10rem"><Text text="BUKRS"/></Column> -->
@@ -46,16 +46,16 @@
         <cells>
         <CheckBox selected="{ConsignmentModel>selected}" 
                       enabled="{= !${ConsignmentModel>BILLNO} }"
-                      visible="{= !${ConsignmentModel>BILLNO} }"/>
-            <Text text="{ConsignmentModel>ICON}"/>
-            <Text text="{ConsignmentModel>SEL}"/>
+                      visible="{= !${ConsignmentModel>BILLNO} }" />
+            <Text text="{ConsignmentModel>ICON}" visible="{= !${ui>/simulate} }"/>
+            <Text text="{ConsignmentModel>SEL}" visible="{= !${ui>/simulate} }"/>
             <Text text="{ConsignmentModel>MAIN_ID}"/>
-            <Text text="{ConsignmentModel>VBELN_SO}"/>
+            <Text text="{ConsignmentModel>VBELN_SO}"  visible="{= !${ui>/simulate} }"/>
             <Text text="{ConsignmentModel>STATUS_SO}"/>
-            <Text text="{ConsignmentModel>VBELN_DL}"/>
-            <Text text="{ConsignmentModel>STATUS_DL}"/>
-            <Text text="{ConsignmentModel>BILLNO}"/>
-            <Text text="{ConsignmentModel>STATUS_BL}"/>
+            <Text text="{ConsignmentModel>VBELN_DL}" visible="{= !${ui>/simulate} }"/>
+            <Text text="{ConsignmentModel>STATUS_DL}" visible="{= !${ui>/simulate} }"/>
+            <Text text="{ConsignmentModel>BILLNO}" visible="{= !${ui>/simulate} }"/>
+            <Text text="{ConsignmentModel>STATUS_BL}" visible="{= !${ui>/simulate} }"/>
             <!-- <Text text="{ConsignmentModel>GJAHR}"/>
             <Text text="{ConsignmentModel>BUKRS}"/> -->
         </cells>

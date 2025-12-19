@@ -32,7 +32,7 @@
             </HBox>
         </VBox>
         <HBox >
-            <CheckBox  id="chkSimulate" text="Simulate"></CheckBox>
+            <CheckBox  id="chkSimulate" text="Simulate" selected="{ui>/simulate}"></CheckBox>
         </HBox>
         </VBox>
         

@@ -49,6 +49,12 @@ sap.ui.define([
         },
         OnConsignment() {
             this.getOwnerComponent().getRouter().navTo("AiRPAConsignmentSalesSS");
+        },
+        OnAiRPASelfCollect(){
+            this.getOwnerComponent().getRouter().navTo("AiRPASelfCollect");
+        },
+        onAiRPAHireToRetire(){
+             this.getOwnerComponent().getRouter().navTo("AiRPAHireToRetire");
         }
 
     });

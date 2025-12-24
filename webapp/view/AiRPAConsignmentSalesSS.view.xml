@@ -7,13 +7,7 @@
     xmlns:u="sap.ui.unified">
 
     <Page title="Inter Company Sales Consignment" busy="{UiLoadingStatus>/busy}">
-        	<!-- <l:VerticalLayout class="sapUiContentPadding" width="100%">
-		<BusyIndicator text="... something is happening" class="sapUiTinyMarginBottom" />
-		<HBox justifyContent="Start" alignItems="Center">
-			<BusyIndicator size="3em" />
-		</HBox>
-		<BusyIndicator size="1.6rem" class="sapUiMediumMarginBegin" />
-	</l:VerticalLayout> -->
+        	
         <VBox class="BigBox" justifyContent="Center">
             <Text text="Selection Criteria: " class="SelectionText"></Text>
             <VBox class="BigBox" alignItems="Start" justifyContent="Center">

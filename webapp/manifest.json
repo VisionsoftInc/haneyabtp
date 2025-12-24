@@ -184,6 +184,16 @@
           "name": "AiRPAConsignmentSalesOutput",
           "pattern": "AiRPAConsignmentSalesOutput",
           "target": "AiRPAConsignmentSalesOutput"
+        },
+        {
+          "name": "AiRPASelfCollect",
+          "pattern": "AiRPASelfCollect",
+          "target": "AiRPASelfCollect"
+        },
+         {
+          "name": "AiRPAHireToRetire",
+          "pattern": "AiRPAHireToRetire",
+          "target": "AiRPAHireToRetire"
         }
       ],
       "targets": {
@@ -223,6 +233,12 @@
         },
         "AiRPAConsignmentSalesOutput":{
           "viewName":"AiRPAConsignmentSalesOutput"
+        },
+        "AiRPASelfCollect":{
+           "viewName":"AiRPASelfCollect"
+        },
+        "AiRPAHireToRetire":{
+          "viewName": "AiRPAHireToRetire"
         }
       }
     },

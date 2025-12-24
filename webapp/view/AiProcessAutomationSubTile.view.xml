@@ -15,7 +15,7 @@
                     
                     <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
                         header="Self Collect"
-                        press="">
+                        press="OnAiRPASelfCollect">
                         <customData>
                             <core:CustomData key="group" value="O2C"/>
                         </customData>
@@ -215,7 +215,7 @@
 
                     <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
                         header="Hire to Retire"
-                        press="">
+                        press="onAiRPAHireToRetire">
                         <customData>
                             <core:CustomData key="group" value="HTR"/>
                         </customData>

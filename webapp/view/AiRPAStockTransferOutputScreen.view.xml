@@ -1,96 +1,195 @@
 <mvc:View
     controllerName="haneya.controller.AiRPAStockTransferOutputScreen"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m"
-    	
-    xmlns:smartTable="sap.ui.comp.smarttable">
+    xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+    height="100%">
 
-    <Page title="Inter Company Stock Transfer">
-        
-        <!-- Toolbar with Refresh Button -->
-        <headerContent>
-            <Button
-                text="Reprocess"
-                press="onReprocessPress"/>
-        </headerContent>
-    <ScrollContainer
-        horizontal="true">
-        <!-- Table to display Function Import data -->
-        <Table
-            id="outputTable"
-            inset="false"
-            headerText="Inter Company Stock Transfer Data"
-            items="{
-                path: 'tableModel>/records'}"
-            width="auto"
-            growing="true"
-            mode="MultiSelect"
-            >
-
-    <!-- Define Columns -->
-    <columns >
-        <Column width="8rem"><Text text="Icon"/></Column>
-        <Column width="8rem"><Text text="Sel"/></Column>
-        <Column width="8rem"><Text text="FileId"/></Column>
-        <Column width="8rem"><Text text="MainId"/></Column>
-        <Column width="8rem"><Text text="PoNumber"/></Column>
-        <Column width="18rem"><Text text="StatusPo"/></Column>
-        <Column width="8rem"><Text text="DelNumber"/></Column>
-        <Column width="8rem"><Text text="StatusDel"/></Column>
-        <Column width="8rem"><Text text="PgiStatus"/></Column>
-        <Column width="8rem"><Text text="PgiAccNo"/></Column>
-        <Column width="8rem"><Text text="BillNum"/></Column>
-        <Column width="8rem"><Text text="BillAccNo"/></Column>
-        <Column width="8rem"><Text text="StatusBill"/></Column>
-        <Column width="8rem"><Text text="GrNumber"/></Column>
-        <Column width="8rem"><Text text="GrAccNo"/></Column>
-        <Column width="8rem"><Text text="StatusGr"/></Column>
-        <Column width="8rem"><Text text="InvNumber"/></Column>
-        <Column width="8rem"><Text text="InvAccNo"/></Column>
-        <Column width="8rem"><Text text="StatusInv"/></Column>
-        <Column width="8rem"><Text text="DistCenter"/></Column>
-        <Column width="8rem"><Text text="FileName"/></Column>
-        <Column width="10rem"><Text text="LaneSt"/></Column>
-        <Column width="8rem"><Text text="Plant"/></Column>
-        <Column width="8rem"><Text text="Product"/></Column>
-        <Column width="8rem"><Text text="Quantity"/></Column>
-        <Column width="8rem"><Text text="SubId"/></Column>
-    </columns>
-
-    <!-- Template for each row -->
-    <ColumnListItem>
-        <cells>
-            <Text text="{tableModel>BillAccNo}"/>
-            <Text text="{tableModel>BillNum}"/>
-            <Text text="{tableModel>DelNumber}"/>
-            <Text text="{tableModel>DistCenter}"/>
-            <Text text="{tableModel>FileId}"/>
-            <Text text="{tableModel>FileName}"/>
-            <Text text="{tableModel>GrAccNo}"/>
-            <Text text="{tableModel>GrNumber}"/>
-            <Text text="{tableModel>Icon}"/>
-            <Text text="{tableModel>InvAccNo}"/>
-            <Text text="{tableModel>InvNumber}"/>
-            <Text text="{tableModel>LaneSt}"/>
-            <Text text="{tableModel>MainId}"/>
-            <Text text="{tableModel>PgiAccNo}"/>
-            <Text text="{tableModel>PgiStatus}"/>
-            <Text text="{tableModel>Plant}"/>
-            <Text text="{tableModel>PoNumber}"/>
-            <Text text="{tableModel>Product}"/>
-            <Text text="{tableModel>Quantity}"/>
-            <Text text="{tableModel>Sel}"/>
-            <Text text="{tableModel>StatusBill}"/>
-            <Text text="{tableModel>StatusDel}"/>
-            <Text text="{tableModel>StatusGr}"/>
-            <Text text="{tableModel>StatusInv}"/>
-            <Text text="{tableModel>StatusPo}"/>
-            <Text text="{tableModel>SubId}"/>
-        </cells>
-    </ColumnListItem>
-
-    </Table>
-</ScrollContainer>
-
-    </Page>
+    <m:Page
+		showHeader="false"
+		enableScrolling="false"
+		class="sapUiContentPadding">
+		<m:content>
+			<m:Toolbar>
+				<m:ToolbarSpacer/>
+    			<m:Button
+        			text="AI.PROCESS"
+        			icon="sap-icon://repost"
+        			type="Emphasized"
+        			press="onAiprocess" />
+			</m:Toolbar>
+			<Table
+    			class="blueHeaderTable"
+				rows="{tableModel>/records}"
+				selectionMode="MultiToggle"
+				paste="onPaste"
+				ariaLabelledBy="title">
+				<extension>
+					<m:OverflowToolbar style="Clear">
+						<m:Title id="title" text="Products"/>
+					</m:OverflowToolbar>
+				</extension>
+                <columns>
+					<Column width="11rem">
+						<m:Label text="Icon" class="HeaderText"/>
+						<template>
+							<m:Text text="{tableModel>Icon}" />
+						</template>
+					</Column>
+					<!-- <Column width="11rem">
+						<m:Label text="Selection" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>Sel}" />
+						</template>
+					</Column> -->
+					<Column width="11rem">
+						<m:Label text="File Id" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>FileId}" />
+						</template>
+					</Column>
+					<!-- <Column width="11rem">
+						<m:Label text="File Name" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>FileName}" />
+						</template>
+					</Column> -->
+					<Column width="11rem">
+						<m:Label text="Main Id" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>MainId}" />
+						</template>
+					</Column>
+					<!-- <Column width="11rem">
+						<m:Label text="Sub Id" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>SubId}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Product" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>Product}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Distribution" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>DistCenter}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Plant" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>Plant}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Quantity" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>Quantity}" />
+						</template>
+					</Column> -->
+					<Column width="11rem">
+						<m:Label text="STO PO Number" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>PoNumber}" />
+						</template>
+					</Column>
+					<Column width="20rem">
+						<m:Label text="PO Status" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>StatusPo}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Delivery Number" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>DelNumber}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Delivery Status" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>StatusDel}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="PGI Status" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>PgiStatus}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="PGI Accounting NO" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>PgiAccNo}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Billing Number" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>BillNum}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Billing Accounting No" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>BillAccNo}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Billing Status" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>StatusBill}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="GR Number" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>GrNumber}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="GR Accounting No" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>GrAccNo}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="GR Status" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>StatusGr}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Invoice Number" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>InvNumber}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Invoice Company Accounting Document" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>InvAccNo}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Invoice Status" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>StatusInv}" />
+						</template>
+					</Column>
+					<!-- <Column width="11rem">
+						<m:Label text="Lane St" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>LaneSt}" />
+						</template>
+					</Column> -->
+                </columns>    
+			</Table>
+		</m:content>
+	</m:Page>
 </mvc:View>

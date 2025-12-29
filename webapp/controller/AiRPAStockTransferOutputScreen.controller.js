@@ -9,6 +9,12 @@ sap.ui.define([
 
         onInit: function () {
             // Attach route matched
+            debugger
+            jQuery.sap.includeStyleSheet(
+                        sap.ui.require.toUrl(
+                            "haneya/view/AiRPAStockTransferOutputScreen.view.css"
+                        )
+            );
             this.getOwnerComponent()
                 .getRouter()
                 .getRoute("AiRPAStockTransferOutputScreen")
@@ -30,7 +36,8 @@ sap.ui.define([
             console.log("Data loaded for table:", oResultModel.getData());
         },
 
-        onReprocessPress: function () {
+        onAiprocess: function () {
+            
             MessageToast.show("Reprocess triggered");
         }
 

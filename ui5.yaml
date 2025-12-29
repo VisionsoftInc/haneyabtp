@@ -25,6 +25,14 @@ server:
             path: /sap/opu/odata/VSHANEYA/ZSTO_TRANS_IN_SRV/
             client: "100"
             authenticationType: BasicAuthentication
+
+
+          - scp: true
+            destination: CustomObjectConflicts
+            path: /sap/opu/odata/VSHANEYA/CUS_OBJ_CON_SRV/
+            client: "100"
+            authenticationType: BasicAuthentication
+
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:

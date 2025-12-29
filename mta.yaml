@@ -27,16 +27,36 @@ modules:
       - haneya.zip
       name: haneya
       target-path: resources/
-# - name: haneya-app-content
-#   type: com.sap.application.content
-#   path: .
-#   requires:
-#   - name: haneya-repo-host
-#     parameters:
-#       content-target: true
-#   build-parameters:
-#     build-result: resources
-#     requires: []
+- name: haneya-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: haneya-destination-service
+    parameters:
+      content-target: true
+  - name: haneya-repo-host
+    parameters:
+      service-key:
+        name: haneya-repo-host-key
+  - name: haneya-uaa
+    parameters:
+      service-key:
+        name: haneya-uaa-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: haneya_haneya_repo_host
+          ServiceInstanceName: haneya-html5-service
+          ServiceKeyName: haneya-repo-host-key
+          sap.cloud.service: haneya
+        - Authentication: OAuth2UserTokenExchange
+          Name: haneya_haneya_uaa
+          ServiceInstanceName: haneya-xsuaa-service
+          ServiceKeyName: haneya-uaa-key
+          sap.cloud.service: haneya
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
 resources:
 - name: haneya-html5-repo-runtime
   type: org.cloudfoundry.managed-service
@@ -60,16 +80,7 @@ resources:
   type: org.cloudfoundry.managed-service
   parameters:
     config:
-      HTML5Runtime_enabled: false
-      init_data:
-        instance:
-          destinations:
-          - Authentication: NoAuthentication
-            Name: ui5
-            ProxyType: Internet
-            Type: HTTP
-            URL: https://ui5.sap.com
-          existing_destinations_policy: update
+      HTML5Runtime_enabled: true
       version: 1.0.0
     service: destination
     service-name: haneya-destination-service

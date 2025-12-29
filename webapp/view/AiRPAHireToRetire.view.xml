@@ -1,11 +1,11 @@
 <mvc:View
- controllerName="haneya.controller.AiRPASelfCollect"
+ controllerName="haneya.controller.AiRPAHireToRetire"
  xmlns:mvc="sap.ui.core.mvc"
  	xmlns:l="sap.ui.layout"
 	xmlns:u="sap.ui.unified"
   xmlns="sap.m"
 >
-  <Page title="Self Collect"> 
+  <Page title="Hire To Retire"> 
    <VBox class="BigBox" justifyContent="Center">
             <Text text="Selection Criteria: " class="SelectionText"></Text>
             <VBox class="BigBox" alignItems="Start" justifyContent="Center">

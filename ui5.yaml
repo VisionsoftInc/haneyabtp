@@ -25,11 +25,6 @@ server:
             path: /sap/opu/odata/VSHANEYA/ZSTO_TRANS_IN_SRV/
             client: "100"
             authenticationType: BasicAuthentication
-          - scp: true
-            destination: Consignment
-            path: /sap/opu/odata/sap/ZVSHANEYA_SALES_CONSIGNMENT_SRV/
-            client: "100"
-            authenticationType: BasicAuthentication
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:

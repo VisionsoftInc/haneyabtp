@@ -1,22 +1,20 @@
-
-.BigBox {
+.bigBlackBox {
     border: 0.1px solid black;
     padding: 20px;
     margin: 20px;
     border-radius: 8px;
     background-color: white; 
     display: flex;
+    justify-content: center;
+    height: 60%;
 }
-.labelText {
-    /* margin-right: 1rem;   space between label and value */
-    margin-right: 15px; 
-    font-weight: bold;
-    
+.datebox{
+    border: 0.1px solid black;
+    width: 100%;
+    padding-left: 15px;
 }
-.filebox{
-    margin-top: 5px;
-}
-.SelectionText {
+.selecttext{
     font-weight: bold;
     font-size: 1rem; 
+    text-decoration: blue;
 }

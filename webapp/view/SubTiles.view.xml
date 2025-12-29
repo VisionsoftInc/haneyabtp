@@ -34,19 +34,19 @@
             <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
                 header="HANA Compatibility" 
                 mode="ActionMode" 
-                press="">
+                press="OnHANACompatibility">
             </GenericTile>
 
             <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
                 header="Upgrade Conflicts Remediation" 
                 mode="ActionMode" 
-                press="">
+                press="OnUpgConRemediation">
             </GenericTile>
 
             <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
                 header="Function Module Remediation" 
                 mode="ActionMode" 
-                press="">
+                press="OnFunModRemediation">
             </GenericTile>
 
         </FlexBox>

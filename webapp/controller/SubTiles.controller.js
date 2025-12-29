@@ -9,7 +9,18 @@ sap.ui.define([
         },
         oncustomobjectsconflicts: function () {
            this.getOwnerComponent().getRouter().navTo("CustomObject");
-           console.log("click")
+        },
+        
+        OnHANACompatibility: function () {
+           this.getOwnerComponent().getRouter().navTo("HANACompatibilitySS");
+        },
+
+        OnUpgConRemediation: function () {
+           this.getOwnerComponent().getRouter().navTo("UpgConRemediationSS");
+        },
+
+        OnFunModRemediation: function () {
+           this.getOwnerComponent().getRouter().navTo("FunModRemediationSS");
         },
     });
 });

@@ -34,16 +34,29 @@
         "odataVersion": "2.0"
       }
     },
-      "Consignment": {
-      "uri": "/sap/opu/odata/sap/ZVSHANEYA_SALES_CONSIGNMENT_SRV/",
+      "CustomObjectConflicts": {
+      "uri": "/sap/opu/odata/VSHANEYA/CUS_OBJ_CON_SRV/",
       "type": "OData",
       "settings": {
         "annotations": [],
-        "localUri": "localService/Consignment/metadata.xml",
+        "localUri": "localService/CustomObjectConflicts/metadata.xml",
         "odataVersion": "2.0"
       }
     }
-  }
+  },
+  "crossNavigation": {
+      "inbounds": {
+        "haneya-display": {
+          "semanticObject": "haneya",
+          "action": "display",
+          "title": "{{haneya-display.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
   },
   "sap.ui": {
     "technology": "UI5",
@@ -95,9 +108,9 @@
           "useBatch": false
         }
       },
-      "ConsignmentModel": {
+      "CustObjConModel": {
         "type": "sap.ui.model.odata.v2.ODataModel",
-        "dataSource": "Consignment",
+        "dataSource": "CustomObjectConflicts",
         "settings": {
           "useBatch": false
         }
@@ -146,6 +159,11 @@
           "target": "CustomObject"
         },
         {
+          "name": "CustomObjectOutput",
+          "pattern": "CustomObjectOutput/{sProgram}",
+          "target": "CustomObjectOutput"
+        },
+        {
           "name": "AiProcessAutomationHeadTile",
           "pattern": "AiProcessAutomationHeadTile",
           "target": "AiProcessAutomationHeadTile"
@@ -184,6 +202,26 @@
           "name": "AiRPAConsignmentSalesOutput",
           "pattern": "AiRPAConsignmentSalesOutput",
           "target": "AiRPAConsignmentSalesOutput"
+        },
+        {
+          "name": "HANACompatibilitySS",
+          "pattern": "HANACompatibilitySS",
+          "target": "HANACompatibilitySS"
+        },
+        {
+          "name": "UpgConRemediationSS",
+          "pattern": "UpgConRemediationSS",
+          "target": "UpgConRemediationSS"
+        },
+        {
+          "name": "FunModRemediationSS",
+          "pattern": "FunModRemediationSS",
+          "target": "FunModRemediationSS"
+        },
+        {
+          "name": "CustObjConOutputTable",
+          "pattern": "CustObjConOutputTable",
+          "target": "CustObjConOutputTable"
         }
       ],
       "targets": {
@@ -199,6 +237,9 @@
         },
         "CustomObject":{
         "viewName":"CustomObject"
+        },
+        "CustomObjectOutput":{
+        "viewName":"CustomObjectOutput"
         },
         "AiProcessAutomationHeadTile":{
           "viewName":"AiProcessAutomationHeadTile"
@@ -223,6 +264,18 @@
         },
         "AiRPAConsignmentSalesOutput":{
           "viewName":"AiRPAConsignmentSalesOutput"
+        },
+        "HANACompatibilitySS":{
+          "viewName":"HANACompatibilitySS"
+        },
+        "UpgConRemediationSS":{
+          "viewName":"UpgConRemediationSS"
+        },
+        "FunModRemediationSS":{
+          "viewName":"FunModRemediationSS"
+        },
+        "CustObjConOutputTable":{
+          "viewName":"CustObjConOutputTable"
         }
       }
     },
@@ -232,5 +285,9 @@
       "id": "App",
       "async": true
     }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "haneya"
   }
 }

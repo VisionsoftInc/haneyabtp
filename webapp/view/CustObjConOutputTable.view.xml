@@ -1,0 +1,113 @@
+<mvc:View
+    controllerName="haneya.controller.CustObjConOutputTable"
+    xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+    height="100%">
+
+    <m:Page
+		showHeader="false"
+		enableScrolling="true"
+		class="sapUiContentPadding">
+		<m:content>
+			<m:Toolbar>
+				<m:ToolbarSpacer/>
+    			<m:Button
+        			text="AI.PROCESS"
+        			icon="sap-icon://repost"
+        			type="Emphasized"
+        			press="onAiprocess" />
+			</m:Toolbar>
+			<Table
+    			class="blueHeaderTable"
+				rows="{tableModel>/results}"
+				selectionMode="MultiToggle"
+				paste="onPaste"
+				rowMode="Auto"
+				height="100%"
+				ariaLabelledBy="title">
+				<extension>
+					<m:OverflowToolbar style="Clear">
+						<m:Title id="title" text="Products"/>
+					</m:OverflowToolbar>
+				</extension>
+                <columns>
+					<Column width="11rem">
+						<m:Label text="COLUMN" class="HeaderText"/>
+						<template>
+							<m:Text text="{tableModel>COLUMN}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="COLUMN1 " class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>COLUMN1}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="COLUMN2" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>COLUMN2}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="COLUMN3" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>COLUMN3}" />
+						</template>
+					</Column>
+					<Column width="20rem">
+						<m:Label text="COLUMN4" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>COLUMN4}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="COLUMN5" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>COLUMN5}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="COLUMN6" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>COLUMN6}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="COLUMN7" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>COLUMN7}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="COLUMN8" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>COLUMN8}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="COLUMN9" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>COLUMN9}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="COLUMN10" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>COLUMN10}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="COLUMN11" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>COLUMN11}" />
+						</template>
+					</Column>
+                </columns>    
+			</Table>
+		</m:content>
+	</m:Page>
+</mvc:View>

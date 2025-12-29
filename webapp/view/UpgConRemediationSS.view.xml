@@ -1,4 +1,5 @@
-<mvc:View controllerName="haneya.controller.CustomObject"
+<mvc:View 
+    controllerName="haneya.controller.UpgConRemediationSS"
     xmlns:l="sap.ui.layout" 
     xmlns:f="sap.ui.layout.form" 
     xmlns:mvc="sap.ui.core.mvc"
@@ -7,7 +8,7 @@
     <Page showHeader="false" class="sapUiSizeCompact" busy="{UiLoadingStatus>/busy}">
 
         <VBox class="bigBlackBox">
-        <Title text="Custom Object Conflicts" level="H6" textAlign="Center" width="100%" />
+        <Title text="Upgrade Conflicts Remediation" level="H6" textAlign="Center" width="100%" />
             <f:SimpleForm
                 editable="true"
                 layout="ResponsiveGridLayout"
@@ -18,10 +19,10 @@
                 <Input width="30%"></Input>
 
                 <Label text="Program Name" class="HeadText" />
-                <Input id="programInput" width="30%"></Input>
+                <Input id="Programid" width="30%"></Input>
 
                 <Label text="Package Name" class="HeadText" />
-                <Input id="packageInput" width="30%"></Input>
+                <Input id="Packageid" width="30%"></Input>
 
                 <Label text="Download" class="HeadText" />
                 <CheckBox />

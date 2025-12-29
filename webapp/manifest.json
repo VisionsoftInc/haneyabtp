@@ -204,6 +204,7 @@
           "target": "AiRPAConsignmentSalesOutput"
         },
         {
+
           "name": "HANACompatibilitySS",
           "pattern": "HANACompatibilitySS",
           "target": "HANACompatibilitySS"
@@ -222,6 +223,16 @@
           "name": "CustObjConOutputTable",
           "pattern": "CustObjConOutputTable",
           "target": "CustObjConOutputTable"
+        },  
+        {  
+          "name": "AiRPASelfCollect",
+          "pattern": "AiRPASelfCollect",
+          "target": "AiRPASelfCollect"
+        },
+         {
+          "name": "AiRPAHireToRetire",
+          "pattern": "AiRPAHireToRetire",
+          "target": "AiRPAHireToRetire"
         }
       ],
       "targets": {
@@ -276,6 +287,12 @@
         },
         "CustObjConOutputTable":{
           "viewName":"CustObjConOutputTable"
+        },  
+        "AiRPASelfCollect":{
+           "viewName":"AiRPASelfCollect"
+        },
+        "AiRPAHireToRetire":{
+          "viewName": "AiRPAHireToRetire"
         }
       }
     },

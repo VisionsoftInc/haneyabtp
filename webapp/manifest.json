@@ -50,7 +50,7 @@
         "annotations": [],
         "localUri": "localService/CustomObjectConflicts/metadata.xml",
         "odataVersion": "2.0"
-      },
+      }},
       "HANACompatibility": {
       "uri": "/sap/opu/odata/VSHANEYA/HANA_COMPATIBILITY_SRV/",
       "type": "OData",
@@ -185,7 +185,7 @@
         "dataSource": "HireToRetire",
         "settings": {
           "useBatch": false
-        },
+        }},
       "HANACompatibilityModel": {
         "type": "sap.ui.model.odata.v2.ODataModel",
         "dataSource": "HANACompatibility",
@@ -348,11 +348,7 @@
           "pattern": "AiRPAHireToRetireOutput",
           "target": "AiRPAHireToRetireOutput"
         },  
-        {  
-          "name": "AiRPASelfCollect",
-          "pattern": "AiRPASelfCollect",
-          "target": "AiRPASelfCollect"
-        },
+      
          {
           "name": "AiRPAHireToRetire",
           "pattern": "AiRPAHireToRetire",
@@ -440,13 +436,6 @@
         "AiRPAConsignmentSalesOutput":{
           "viewName":"AiRPAConsignmentSalesOutput"
         },
-
-        "AiRPASelfCollect":{
-           "viewName":"AiRPASelfCollect"
-        },
-        "AiRPAHireToRetire":{
-          "viewName": "AiRPAHireToRetire"
-        },
         "HANACompatibilitySS":{
           "viewName":"HANACompatibilitySS"
         },
@@ -515,4 +504,4 @@
     "public": true,
     "service": "haneya"
   }
-}}}
+}

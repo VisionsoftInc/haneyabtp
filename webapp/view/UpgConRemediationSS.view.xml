@@ -12,8 +12,7 @@
             <f:SimpleForm
                 editable="true"
                 layout="ResponsiveGridLayout"
-                adjustLabelSpan="true"
-            >
+                adjustLabelSpan="true">
 
                 <Label text="Application" class="HeadText"/>
                 <Input width="30%"></Input>
@@ -21,17 +20,20 @@
                 <Label text="Program Name" class="HeadText" />
                 <Input id="Programid" width="30%"></Input>
 
-                <Label text="Package Name" class="HeadText" />
-                <Input id="Packageid" width="30%"></Input>
+                <Label text="Message Type" class="HeadText" />
+                <Input id="Messageid" width="30%"></Input>
 
-                <Label text="Download" class="HeadText" />
-                <CheckBox />
+                <Label text="Select any" class="HeadText"/>
+                <VBox>
+                    <RadioButtonGroup id="ActionGroup" columns="1">
+                        <RadioButton text="Remediate"/>
+                        <RadioButton text="Rollback"/>
+                    </RadioButtonGroup>
+                </VBox>
 
             </f:SimpleForm>
-
+            
         </VBox>
-
-        <Label text="Please provide either Package or Program for better performance" />
 
         <footer>
             <OverflowToolbar>

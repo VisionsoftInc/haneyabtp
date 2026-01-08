@@ -13,14 +13,21 @@
                 editable="true">
 
 
-                <Label text="Application" class="HeadText"/>
-                <Input width="30%"></Input>
+                <Label text="Application" />
+                <HBox>
+                    <Input width="40%" />
+                </HBox>
 
-                <Label text="Program Name" class="HeadText" />
-                <Input id="programInput" width="30%"></Input>
+                <Label text="Program Name" />
+                <HBox>
+                    <Input id="programInput" width="90%" />
+                </HBox>
 
-                <Label text="Package Name" class="HeadText" />
-                <Input id="packageInput" width="30%"></Input>
+                <Label text="Package Name" />
+                <HBox>
+                    <Input id="packageInput" width="90%" />
+                </HBox>
+
 
 
                 <Label text="Download" class="HeadText" />

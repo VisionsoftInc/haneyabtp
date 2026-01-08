@@ -38,5 +38,8 @@ sap.ui.define([
         onAiProcessAutomation: function () {
            this.getOwnerComponent().getRouter().navTo("AiProcessAutomationHeadTile");
         },
+        OnPress: function () {
+           this.getOwnerComponent().getRouter().navTo("MigrationHeadTile");
+        },
     });
 });

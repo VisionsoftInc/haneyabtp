@@ -5,12 +5,14 @@
 	xmlns:u="sap.ui.unified"
 	xmlns:c="sap.ui.core"
 	xmlns:m="sap.m"
+	xmlns:si="sap.suite.ui.commons.statusindicator"
     height="100%">
 
     <m:Page
 		showHeader="false"
 		enableScrolling="false"
-		class="sapUiContentPadding">
+		class="sapUiContentPadding"
+		busy="{UiLoadingStatus>/busy}">
 		<m:content>
 			<m:Toolbar>
 				<m:ToolbarSpacer/>
@@ -21,27 +23,44 @@
         			press="onAiprocess" />
 			</m:Toolbar>
 			<Table
+			    id="stocktransfertable"
     			class="blueHeaderTable"
 				rows="{tableModel>/records}"
 				selectionMode="MultiToggle"
 				paste="onPaste"
 				ariaLabelledBy="title">
-				<extension>
-					<m:OverflowToolbar style="Clear">
-						<m:Title id="title" text="Products"/>
-					</m:OverflowToolbar>
-				</extension>
                 <columns>
-					<Column width="11rem">
-						<m:Label text="Icon" class="HeaderText"/>
+					<Column width="4rem" hAlign="Center">
+    <label>
+        <m:Label text="Icon" class="HeaderText"/>
+    </label>
+    <template>
+        <si:StatusIndicator
+            width="4rem"
+            height="3rem"
+            value="{
+                path: 'tableModel>Icon',
+                formatter: '.formatArrowValue'
+            }">
+
+            <si:propertyThresholds>
+                <si:PropertyThreshold fillColor="Error" toValue="20"/>
+                <si:PropertyThreshold fillColor="Critical" toValue="50"/>
+                <si:PropertyThreshold fillColor="Good" toValue="100"/>
+            </si:propertyThresholds>
+
+            <si:ShapeGroup>
+                <si:LibraryShape shapeId="arrow_right"/>
+            </si:ShapeGroup>
+
+        </si:StatusIndicator>
+    </template>
+</Column>
+
+					<!-- <Column width="11rem">
+						<m:Label text="Icon" class="HeaderText" />
 						<template>
 							<m:Text text="{tableModel>Icon}" />
-						</template>
-					</Column>
-					<!-- <Column width="11rem">
-						<m:Label text="Selection" class="HeaderText" />
-						<template>
-							<m:Text text="{tableModel>Sel}" />
 						</template>
 					</Column> -->
 					<Column width="11rem">
@@ -50,48 +69,12 @@
 							<m:Text text="{tableModel>FileId}" />
 						</template>
 					</Column>
-					<!-- <Column width="11rem">
-						<m:Label text="File Name" class="HeaderText" />
-						<template>
-							<m:Text text="{tableModel>FileName}" />
-						</template>
-					</Column> -->
 					<Column width="11rem">
 						<m:Label text="Main Id" class="HeaderText" />
 						<template>
 							<m:Text text="{tableModel>MainId}" />
 						</template>
 					</Column>
-					<!-- <Column width="11rem">
-						<m:Label text="Sub Id" class="HeaderText" />
-						<template>
-							<m:Text text="{tableModel>SubId}" />
-						</template>
-					</Column>
-					<Column width="11rem">
-						<m:Label text="Product" class="HeaderText" />
-						<template>
-							<m:Text text="{tableModel>Product}" />
-						</template>
-					</Column>
-					<Column width="11rem">
-						<m:Label text="Distribution" class="HeaderText" />
-						<template>
-							<m:Text text="{tableModel>DistCenter}" />
-						</template>
-					</Column>
-					<Column width="11rem">
-						<m:Label text="Plant" class="HeaderText" />
-						<template>
-							<m:Text text="{tableModel>Plant}" />
-						</template>
-					</Column>
-					<Column width="11rem">
-						<m:Label text="Quantity" class="HeaderText" />
-						<template>
-							<m:Text text="{tableModel>Quantity}" />
-						</template>
-					</Column> -->
 					<Column width="11rem">
 						<m:Label text="STO PO Number" class="HeaderText" />
 						<template>
@@ -182,12 +165,6 @@
 							<m:Text text="{tableModel>StatusInv}" />
 						</template>
 					</Column>
-					<!-- <Column width="11rem">
-						<m:Label text="Lane St" class="HeaderText" />
-						<template>
-							<m:Text text="{tableModel>LaneSt}" />
-						</template>
-					</Column> -->
                 </columns>    
 			</Table>
 		</m:content>

@@ -11,12 +11,12 @@
             <VBox class="BigBox" alignItems="Start" justifyContent="Center">
             
 
-            <HBox id="UploadFile"  class="filebox" alignItems="Center">
+            <HBox id="UploadFile1"  class="filebox" alignItems="Center">
                 <Label text="Upload File :" class="labelText"></Label>
                 
                 <l:VerticalLayout>
 		               <u:FileUploader
-		             	id="fileUploader1"
+		             	id="fileUploader2"
 		             	name="myFileUpload"
                   change="onFileChange"
 		             	uploadUrl="upload/"

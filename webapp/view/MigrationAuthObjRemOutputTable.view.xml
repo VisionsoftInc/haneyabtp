@@ -1,0 +1,48 @@
+<mvc:View
+    controllerName="haneya.controller.MigrationAuthObjRemOutputTable"
+    xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+    height="100%">
+
+    <m:Page
+		showHeader="false"
+		enableScrolling="true"
+		class="sapUiContentPadding">
+		<m:Title text="Authourization from one TCode to another" textAlign="Center" width="100%" ></m:Title>
+		<m:content>
+			<Table
+    			class="blueHeaderTable"
+				rows="{tableModel>/results}"
+				selectionMode="MultiToggle"
+				paste="onPaste"
+				rowMode="Auto"
+				ariaLabelledBy="title">
+				<extension>
+				</extension>
+                <columns>
+					<Column width="20rem">
+						<m:Label text="Old TCode" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>Zatcode}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Replace TCode" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>Zrtcode}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Authorization Object" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>Object}" />
+						</template>
+					</Column>
+                </columns>    
+			</Table>
+		</m:content>
+	</m:Page>
+</mvc:View>

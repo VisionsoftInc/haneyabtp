@@ -11,7 +11,7 @@
     /* margin-right: 1rem;   space between label and value */
     margin-right: 15px; 
     font-weight: bold;
-    
+    margin-left: 10px;
 }
 .filebox{
     margin-top: 5px;
@@ -19,4 +19,14 @@
 .SelectionText {
     font-weight: bold;
     font-size: 1rem; 
+}
+.DailogBox {
+    border: 0.1px solid black;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    background-color: rgb(254, 254, 254); 
+    display: flex;
+    width: 70%;
+    height: 30%;
 }

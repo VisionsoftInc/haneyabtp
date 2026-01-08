@@ -11,97 +11,84 @@
 		showHeader="false"
 		enableScrolling="true"
 		class="sapUiContentPadding">
+		<m:Title text="Custom Object Conflicts" textAlign="Center" width="100%"></m:Title>
 		<m:content>
-			<m:Toolbar>
-				<m:ToolbarSpacer/>
-    			<m:Button
-        			text="AI.PROCESS"
-        			icon="sap-icon://repost"
-        			type="Emphasized"
-        			press="onAiprocess" />
-			</m:Toolbar>
 			<Table
     			class="blueHeaderTable"
 				rows="{tableModel>/results}"
 				selectionMode="MultiToggle"
 				paste="onPaste"
 				rowMode="Auto"
-				height="100%"
 				ariaLabelledBy="title">
-				<extension>
-					<m:OverflowToolbar style="Clear">
-						<m:Title id="title" text="Products"/>
-					</m:OverflowToolbar>
-				</extension>
                 <columns>
 					<Column width="11rem">
-						<m:Label text="COLUMN" class="HeaderText"/>
+						<m:Label text="S_NO" class="HeaderText"/>
 						<template>
 							<m:Text text="{tableModel>COLUMN}" />
 						</template>
 					</Column>
 					<Column width="11rem">
-						<m:Label text="COLUMN1 " class="HeaderText" />
+						<m:Label text="Line Number " class="HeaderText" />
 						<template>
 							<m:Text text="{tableModel>COLUMN1}" />
 						</template>
 					</Column>
 					<Column width="11rem">
-						<m:Label text="COLUMN2" class="HeaderText" />
+						<m:Label text="program name" class="HeaderText" />
 						<template>
 							<m:Text text="{tableModel>COLUMN2}" />
 						</template>
 					</Column>
 					<Column width="11rem">
-						<m:Label text="COLUMN3" class="HeaderText" />
+						<m:Label text="Description" class="HeaderText" />
 						<template>
 							<m:Text text="{tableModel>COLUMN3}" />
 						</template>
 					</Column>
 					<Column width="20rem">
-						<m:Label text="COLUMN4" class="HeaderText" />
+						<m:Label text="Object Type" class="HeaderText" />
 						<template>
 							<m:Text text="{tableModel>COLUMN4}" />
 						</template>
 					</Column>
 					<Column width="11rem">
-						<m:Label text="COLUMN5" class="HeaderText" />
+						<m:Label text="System ID" class="HeaderText" />
 						<template>
 							<m:Text text="{tableModel>COLUMN5}" />
 						</template>
 					</Column>
 					<Column width="11rem">
-						<m:Label text="COLUMN6" class="HeaderText" />
+						<m:Label text="Text" class="HeaderText" />
 						<template>
 							<m:Text text="{tableModel>COLUMN6}" />
 						</template>
 					</Column>
 					<Column width="11rem">
-						<m:Label text="COLUMN7" class="HeaderText" />
+						<m:Label text="Package" class="HeaderText" />
 						<template>
 							<m:Text text="{tableModel>COLUMN7}" />
 						</template>
 					</Column>
 					<Column width="11rem">
-						<m:Label text="COLUMN8" class="HeaderText" />
+						<m:Label text="TR Number" class="HeaderText" />
 						<template>
 							<m:Text text="{tableModel>COLUMN8}" />
 						</template>
 					</Column>
 					<Column width="11rem">
-						<m:Label text="COLUMN9" class="HeaderText" />
+						<m:Label text="Status" class="HeaderText" />
 						<template>
 							<m:Text text="{tableModel>COLUMN9}" />
 						</template>
 					</Column>
 					<Column width="11rem">
-						<m:Label text="COLUMN10" class="HeaderText" />
+						<m:Label text="Automatic/Manual" class="HeaderText" />
 						<template>
 							<m:Text text="{tableModel>COLUMN10}" />
 						</template>
 					</Column>
 					<Column width="11rem">
-						<m:Label text="COLUMN11" class="HeaderText" />
+						<m:Label text="MESSAGE_TYPE" class="HeaderText" />
 						<template>
 							<m:Text text="{tableModel>COLUMN11}" />
 						</template>

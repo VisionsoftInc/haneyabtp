@@ -1,0 +1,44 @@
+<mvc:View
+    controllerName="haneya.controller.AiRPAGLBalanceOutput"
+    xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+    height="100%">
+
+    <m:Page
+		showHeader="false"
+		enableScrolling="false"
+		class="sapUiContentPadding"
+		>
+		<m:content>
+			<m:Toolbar>
+				<m:Text text="GL Balances" class="headertext" width="100%" textAlign="Center"></m:Text>
+			</m:Toolbar>
+			<Table
+			    id="GLBalancetable"
+    			class="blueHeaderTable"
+				rows="{tableModel>/records}"
+				selectionMode="MultiToggle"
+				paste="onPaste"
+				ariaLabelledBy="title">
+
+                <columns>
+					<Column width="11rem">
+						<m:Label text="BELNR" class="HeaderText"/>
+						<template>
+							<m:Text text="{tableModel>BELNR}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="STATUS_GL" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>STATUS_GL}" />
+						</template>
+					</Column>
+                </columns>    
+			</Table>
+		</m:content>
+	</m:Page>
+</mvc:View>

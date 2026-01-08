@@ -1,0 +1,85 @@
+<mvc:View
+    controllerName="haneya.controller.UpgConRemediationOutputTable"
+    xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+    height="100%">
+
+    <m:Page
+		showHeader="false"
+		enableScrolling="true"
+		class="sapUiContentPadding">
+		<m:Title text="Upgrade Conflicts Remediation" textAlign="Center" width="100%" ></m:Title>
+		<m:content>
+			<Table
+				id="UpgConRemTable"
+    			class="blueHeaderTable"
+				rows="{tableModel>/results}"
+				selectionMode="MultiToggle"
+				paste="onPaste"
+				rowMode="Auto"
+				ariaLabelledBy="title">
+				<extension>
+				</extension>
+                <columns>
+					<Column width="11rem">
+						<m:Label text="SL.NO." class="HeaderText"/>
+						<template>
+							<m:Text text="{tableModel>SL_NO}" />
+						</template>
+					</Column>
+					<Column width="20rem">
+						<m:Label text="LINE NO" class="HeaderText"/>
+						<template>
+							<m:Text text="{tableModel>LINE_NO}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Program Name" class="HeaderText"/>
+						<template>
+							<m:Text text="{tableModel>PROG}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Description" class="HeaderText"/>
+						<template>
+							<m:Text text="{tableModel>ERR_TYPE}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Message_Class" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>KIND}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Error" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>ERROR_DESC}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Automated or Manual" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>AUTO_MANUAL}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Program Name" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>PRG}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Description" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>DESC}" />
+						</template>
+					</Column>
+                </columns>    
+			</Table>
+		</m:content>
+	</m:Page>
+</mvc:View>

@@ -1,0 +1,95 @@
+<mvc:View controllerName="haneya.controller.MigrationHeadTile"
+    xmlns:l="sap.ui.layout" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page 
+        title="Migration -> S/4 HANA 2021 to 2023"
+        enableScrolling="true">
+
+        <FlexBox 
+            wrap="Wrap"
+            width="100%"
+            renderType="Div">
+            <Text text=""></Text>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="S/4 2023 HANA Incompatibility Report" 
+                mode="ActionMode">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="S/4 2023 HANA Technical Remediation" 
+                mode="ActionMode">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="S/4 2023 HANA Tables/CDS Views Remediation" 
+                mode="ActionMode">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="S/4 2023 HANA Transcation code Remediation" 
+                mode="ActionMode">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="S/4 2023 HANA Process Remediation" 
+                mode="ActionMode"
+                press="OnPressHeadtiles">
+                <customData>
+                            <core:CustomData key="group" value="Process_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Security Roles Remediation" 
+                mode="ActionMode"
+                press="OnPressHeadtiles">
+                <customData>
+                            <core:CustomData key="group" value="Security_Roles_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Masterdata Inconsistencies"  
+                mode="ActionMode">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Masterdata Remediation"
+                mode="ActionMode">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="CVI - BP Migration"
+                mode="ActionMode">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Zero Downtime/Transactional Data"
+                mode="ActionMode"
+                press="OnPressHeadtiles">
+                <customData>
+                            <core:CustomData key="group" value="Zero_Downtime"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="FIORI App Remediation"
+                mode="ActionMode">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="HP ALM"
+                mode="ActionMode">
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Testing Automation"
+                mode="ActionMode">
+            </GenericTile>
+        </FlexBox>
+    </Page>
+</mvc:View>

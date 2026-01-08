@@ -231,7 +231,7 @@
 
                     <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
                         header="GL Balances"
-                        press="">
+                        press="OnPressGLBalance">
                         <customData>
                             <core:CustomData key="group" value="RTR"/>
                         </customData>

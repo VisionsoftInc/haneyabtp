@@ -1,0 +1,84 @@
+<mvc:View
+    controllerName="haneya.controller.MigrationSecRolRemOutputTable"
+    xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+    height="100%">
+
+    <m:Page
+		showHeader="false"
+		enableScrolling="true"
+		class="sapUiContentPadding">
+		<m:Title text="Security Roles Remediation" textAlign="Center" width="100%" ></m:Title>
+		<m:content>
+			<Table
+    			class="blueHeaderTable"
+				rows="{tableModel>/results}"
+				selectionMode="MultiToggle"
+				paste="onPaste"
+				rowMode="Auto"
+				ariaLabelledBy="title">
+				<extension>
+				</extension>
+                <columns>
+					<Column width="20rem">
+						<m:Label text="Zagr_name" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>Zagr_name}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Ztcode" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>Ztcode}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Zfolder" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>Zfolder}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Zdirect" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>Zdirect}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Zexclude" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>Zexclude}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Zinherited" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>Zinherited}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Ztype" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>Ztype}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="As4text" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>As4text}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Trkorr" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>Trkorr}" />
+						</template>
+					</Column>
+                </columns>    
+			</Table>
+		</m:content>
+	</m:Page>
+</mvc:View>

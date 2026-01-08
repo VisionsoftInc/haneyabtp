@@ -1,0 +1,36 @@
+<mvc:View
+    controllerName="haneya.controller.AiRPAGLBalanceSS"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:u="sap.ui.unified">
+
+    <Page title="GL Balances" busy="{UiLoadingStatus>/busy}">
+        <VBox class="BigBox" justifyContent="Center">
+            <Text text="Selection Criteria: " class="SelectionText"></Text>
+            <!-- <VBox class="BigBox" alignItems="Start" justifyContent="Center"> -->
+
+            <HBox id="UploadingFile" visible="true" class="filebox" alignItems="Center" justifyContent="Center" width="100%">
+    <Label text="File Name:" class="labelText" />
+    <u:FileUploader
+        id="fileUpload"
+        name="myFileUpload"
+        width="400px"
+        tooltip="Upload your file"
+        change="onFileSelected"
+        uploadUrl="/"
+        sendXHR="false" />
+</HBox>
+        </VBox>
+        <!-- </VBox> -->
+        
+        <!-- Footer -->
+        <footer>
+            <Toolbar class="footerToolbar">
+                <ToolbarSpacer/>
+                <Button text="Execute" type="Emphasized" press="onExecutePress"/>
+            </Toolbar>
+        </footer>
+
+    </Page>
+</mvc:View>

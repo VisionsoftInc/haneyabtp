@@ -20,8 +20,7 @@
                 <menu>
                     <Menu>
                         <MenuItem text="ECC->S/4 HANA 2023"></MenuItem>
-                        <MenuItem text="S/4 HANA 2023 -> 2025"></MenuItem>
-                        <MenuItem text="ECC -> S/4 HANA 2025"></MenuItem>
+                        <MenuItem text="S/4 HANA 2021 to 2023" press="OnPress"></MenuItem>
                           <MenuItem text="Public Cloud -> Private Cloud"></MenuItem>
                         <MenuItem text="Private Cloud -> Public Cloud"></MenuItem>
                     </Menu>

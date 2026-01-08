@@ -1,10 +1,50 @@
+/* ============================= */
+/* TABLE HEADER STYLING          */
+/* ============================= */
 .blueHeaderTable .sapUiTableHeaderCell {
     background-color: #bcddff !important;
     border-right: 1px solid #ffffff;
 }
 
 .blueHeaderTable .sapUiTableHeaderCell .sapMLabel {
-    color: rgb(0, 0, 0) !important;
+    color: #000000;
     font-weight: 600;
     text-align: center;
+}
+
+/* ============================= */
+/* HEADER TEXT                  */
+/* ============================= */
+.HeaderText {
+    font-weight: bold;
+    font-size: medium;
+}
+
+/* ============================= */
+/* STATUS INDICATOR ICON COLORS */
+/* ============================= */
+.iconRed svg {
+    fill: #e53935;      /* Red */
+}
+
+.iconYellow svg {
+    fill: #fbc02d;      /* Yellow */
+}
+
+.iconGreen svg {
+    fill: #43a047;      /* Green */
+}
+
+/* ============================= */
+/* ENABLE / DISABLE BEHAVIOR    */
+/* ============================= */
+.iconEnabled {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.iconDisabled {
+    opacity: 0.4;
+    cursor: default;
+    pointer-events: none;   /* disables click */
 }

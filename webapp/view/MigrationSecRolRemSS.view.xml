@@ -1,0 +1,73 @@
+<mvc:View
+    controllerName="haneya.controller.MigrationSecRolRemSS"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:u="sap.ui.unified">
+
+    <Page title="Roles Remediation" busy="{UiLoadingStatus>/busy}" >
+
+        <Text text="Transaction Codes" class="SelectionText"></Text>
+
+        <VBox class="BigBox">
+
+            <HBox  alignItems="Center" >
+                <Label text="Transaction Code" showColon="true" class="labelText" width="8rem"/>
+                <Input id="TCode" width="12rem"/>
+
+                <Label text=" To" showColon="true" class="labelText" width="2rem"/>
+                <Input width="12rem"/>
+            </HBox>
+            
+            <HBox  alignItems="Center" >
+                <Label text="Role" showColon="true" class="labelText" width="8rem"/>
+                <Input id="Role1" width="12rem"/>
+
+                <Label text=" To" showColon="true" class="labelText" width="2rem"/>
+                <Input id="Role2" width="12rem"/>
+            </HBox>
+        
+        </VBox>
+        
+        <!-- Footer -->
+        <footer>
+            <Toolbar class="footerToolbar">
+                <ToolbarSpacer/>
+                <Button text="Execute" type="Emphasized" press="OnExecute"/>
+                <Dialog 
+                    id="helloDialog" 
+                    resizable="true" 
+                    draggable="true" 
+                    class="DailogBox" 
+                    title="Enter Transport Request" >
+			<l:VerticalLayout>
+                <HBox alignItems="Center">
+				    <Label  showColon="true" text="Request" class="labelText" width="8rem"/>
+                    <MultiInput
+                        id="Request"
+                        showValueHelp="true"
+                        valueHelpRequest="onValueHelpRequest"
+                        width="20rem"
+                    />
+                </HBox>
+                <HBox alignItems="Center">
+				    <Label  showColon="true" text="Short Description" class="labelText" width="8rem"/>
+				    <Input id="Description" width="20rem"/>
+                </HBox>
+			</l:VerticalLayout>
+			<footer>
+                <Toolbar>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://accept" type="Ghost" tooltip="Execute" press="OnGetData"></Button>
+                <Button icon="sap-icon://add-document" type="Ghost" tooltip="Add new TR" press="OnAddingTR"></Button>
+				<Button text="Clear" type="Ghost" tooltip="Clear" press=".OnClear" />
+				<Button icon="sap-icon://decline" type="Ghost" tooltip="Close" press=".handleClose" />
+                </Toolbar>    
+			</footer>
+		</Dialog>
+            </Toolbar>
+        </footer>
+
+    </Page>
+</mvc:View>

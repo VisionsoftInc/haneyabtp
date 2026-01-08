@@ -65,7 +65,7 @@ sap.ui.define([
             )
         );
     }
-
+    console.log(aFilters)
     oODataModel.read("/Custom_Object_ConflictsSet", {
         filters: aFilters,
 

@@ -1,0 +1,162 @@
+<mvc:View controllerName="haneya.controller.MigrationSubTile"
+    xmlns:l="sap.ui.layout" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page id="SubTilepage"
+        title=""
+        enableScrolling="true">
+
+        <FlexBox id="Migration"
+            wrap="Wrap"
+            width="100%"
+            renderType="Div">
+            <Text text=""></Text>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue" 
+                header="Security Roles Remediation" 
+                mode="ActionMode"
+                press="OnPressSecRolRemediation">
+                <customData>
+                            <core:CustomData key="group" value="Security_Roles_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="Auth.Object Remediation" 
+                mode="ActionMode"
+                press="OnAuthObjRemediation">
+                <customData>
+                            <core:CustomData key="group" value="Security_Roles_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="Delta Configuration Migration" 
+                mode="ActionMode">
+                <customData>
+                            <core:CustomData key="group" value="Process_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="Finance Guided Configuration" 
+                mode="ActionMode">
+                <customData>
+                            <core:CustomData key="group" value="Process_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="Order To Cash Guided Configuration" 
+                mode="ActionMode">
+                <customData>
+                            <core:CustomData key="group" value="Process_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="Procure to Pay(P2P)" 
+                mode="ActionMode">
+                <customData>
+                            <core:CustomData key="group" value="Process_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="Digital Manufacturing Guided Configuration" 
+                mode="ActionMode">
+                <customData>
+                            <core:CustomData key="group" value="Process_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="Planning Guided Configuration" 
+                mode="ActionMode">
+                <customData>
+                            <core:CustomData key="group" value="Process_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="Project Systems" 
+                mode="ActionMode">
+                <customData>
+                            <core:CustomData key="group" value="Process_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="Portfolio Project Management" 
+                mode="ActionMode">
+                <customData>
+                            <core:CustomData key="group" value="Process_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="Quality Management" 
+                mode="ActionMode">
+                <customData>
+                            <core:CustomData key="group" value="Process_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="Extended Warehouse Management" 
+                mode="ActionMode">
+                <customData>
+                            <core:CustomData key="group" value="Process_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="Plant Maintenance" 
+                mode="ActionMode">
+                <customData>
+                            <core:CustomData key="group" value="Process_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="Ariba Guided Configuration" 
+                mode="ActionMode">
+                <customData>
+                            <core:CustomData key="group" value="Process_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="SuccessFactors Guided Configuration" 
+                mode="ActionMode">
+                <customData>
+                            <core:CustomData key="group" value="Process_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="C4C(CRM) Guided Configuration" 
+                mode="ActionMode">
+                <customData>
+                            <core:CustomData key="group" value="Process_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="Human resource management" 
+                mode="ActionMode">
+                <customData>
+                            <core:CustomData key="group" value="Process_Remediation"/>
+                        </customData>
+            </GenericTile>
+
+            <!-- <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tileBlue " 
+                header="" 
+                mode="ActionMode">
+            </GenericTile> -->
+
+        </FlexBox>
+    </Page>
+</mvc:View>

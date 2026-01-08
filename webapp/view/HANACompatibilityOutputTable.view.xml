@@ -1,0 +1,86 @@
+<mvc:View
+    controllerName="haneya.controller.HANACompatibilityOutputTable"
+    xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+    height="100%">
+
+    <m:Page
+		showHeader="false"
+		enableScrolling="true"
+		class="sapUiContentPadding">
+		<m:Title text="HANA Compatibility" textAlign="Center" width="100%" ></m:Title>
+		<m:content>
+			<!-- <m:Toolbar>
+				<m:ToolbarSpacer/>
+    			<m:Button
+        			text="AI.PROCESS"
+        			icon="sap-icon://repost"
+        			type="Emphasized"
+        			press="onAiprocess" />
+			</m:Toolbar> -->
+			<Table
+    			class="blueHeaderTable"
+				rows="{tableModel>/results}"
+				selectionMode="MultiToggle"
+				paste="onPaste"
+				rowMode="Auto"
+				ariaLabelledBy="title">
+				<extension>
+				</extension>
+                <columns>
+					<Column width="20rem">
+						<m:Label text="Row Number" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>LINE}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Object Type" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>OBJTYPE}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Object Name" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>OBJNAME}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Messaget Type" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>KIND}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Message" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>TEST}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Description" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>DESCRIPTION}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Package" class="HeaderText" />
+						<template>
+							<m:Text text="{tableModel>DEVCLASS}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Person Responsible" class="HeaderText"/>
+						<template>
+							<m:Text text="{tableModel>AUTHOR}" />
+						</template>
+					</Column>
+                </columns>    
+			</Table>
+		</m:content>
+	</m:Page>
+</mvc:View>

@@ -16,21 +16,16 @@
                 <Label text="Application" />
                 <HBox>
                     <Input width="40%" />
-                    <!-- <Label text="to:" width="40%" textAlign="Center" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
-                    <Input width="40%"/> -->
-                    <!-- <Button icon="sap-icon://begin" type="Neutral" width="40%" tooltip="Multiple Selection"/> -->
                 </HBox>
 
                 <Label text="Program Name" />
                 <HBox>
-                    <Input width="90%" />
-                    <!-- <Button icon="sap-icon://begin" type="Neutral" tooltip="Multiple Selection" width="40%"/> -->
+                    <Input id="programInput" width="90%" />
                 </HBox>
 
                 <Label text="Package Name" />
                 <HBox>
-                    <Input width="90%" />
-                    <!-- <Button icon="sap-icon://begin" type="Neutral" tooltip="Multiple Selection" width="40%"/> -->
+                    <Input id="packageInput" width="90%" />
                 </HBox>
 
 

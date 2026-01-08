@@ -1,0 +1,31 @@
+<mvc:View
+    controllerName="haneya.controller.MigrationAuthObjRemSS"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:u="sap.ui.unified">
+
+    <Page title="Authourization from one TCode to another" busy="{UiLoadingStatus>/busy}" >
+        <VBox class="BigBox">
+            <Text text="Selection Criteria" class="SelectionText"></Text>
+
+            <HBox class="BigBox" alignItems="Center" >
+                <Label text="Transaction Code:" class="labelText"/>
+                <Input id="TransCodeFrom" width="12rem"/>
+
+                <Label text=" To:" class="labelText"/>
+                <Input id="TransCodeTo" width="12rem"/>
+            </HBox>
+        
+        </VBox>
+        
+        <!-- Footer -->
+        <footer>
+            <Toolbar class="footerToolbar">
+                <ToolbarSpacer/>
+                <Button text="Execute" type="Emphasized" press="onExecutePress"/>
+            </Toolbar>
+        </footer>
+
+    </Page>
+</mvc:View>

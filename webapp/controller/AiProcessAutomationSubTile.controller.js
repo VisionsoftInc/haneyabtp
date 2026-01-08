@@ -55,7 +55,10 @@ sap.ui.define([
         },
         onAiRPAHireToRetire(){
              this.getOwnerComponent().getRouter().navTo("AiRPAHireToRetire");
-        }
+        },
+        OnPressGLBalance(){
+             this.getOwnerComponent().getRouter().navTo("AiRPAGLBalanceSS");
+        },
 
     });
 });

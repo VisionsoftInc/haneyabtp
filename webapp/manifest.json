@@ -42,6 +42,42 @@
         "localUri": "localService/CustomObjectConflicts/metadata.xml",
         "odataVersion": "2.0"
       }
+    },
+      "HANACompatibility": {
+      "uri": "/sap/opu/odata/VSHANEYA/HANA_COMPATIBILITY_SRV/",
+      "type": "OData",
+      "settings": {
+        "annotations": [],
+        "localUri": "localService/HANACompatibility/metadata.xml",
+        "odataVersion": "2.0"
+      }
+    },
+      "UpgConRemediation": {
+      "uri": "/sap/opu/odata/VSHANEYA/UPG_CON_REMEDIATION_SRV/",
+      "type": "OData",
+      "settings": {
+        "annotations": [],
+        "localUri": "localService/UpgConRemediation/metadata.xml",
+        "odataVersion": "2.0"
+      }
+    },
+     "GLBalances": {
+      "uri": "/sap/opu/odata/VSHANEYA/RTR_AI_PROCESS_SRV/",
+      "type": "OData",
+      "settings": {
+        "annotations": [],
+        "localUri": "localService/GLBalances/metadata.xml",
+        "odataVersion": "2.0"
+      }
+    },
+     "AuthObjRemediation": {
+      "uri": "/sap/opu/odata/VSHANEYA/SECURITY_ROLES_REMDI_SRV/",
+      "type": "OData",
+      "settings": {
+        "annotations": [],
+        "localUri": "localService/AuthObjRemediation/metadata.xml",
+        "odataVersion": "2.0"
+      }
     }
   },
   "crossNavigation": {
@@ -94,6 +130,27 @@
           "bundleName": "haneya.i18n.i18n"
         }
       },
+      "MigrationModel": {
+      "type": "sap.ui.model.json.JSONModel",
+      "data": {
+        "selectedGroup": "",
+        "selectedHeader": ""
+        }
+      },
+      "AuthObjRemediationModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "AuthObjRemediation",
+        "settings": {
+          "useBatch": false
+        }
+      },
+      "SecRoleRemediationModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "AuthObjRemediation",
+        "settings": {
+          "useBatch": false
+        }
+      },
       "aiprocess": {
         "type": "sap.ui.model.odata.v2.ODataModel",
         "dataSource": "mainService",
@@ -111,6 +168,27 @@
       "CustObjConModel": {
         "type": "sap.ui.model.odata.v2.ODataModel",
         "dataSource": "CustomObjectConflicts",
+        "settings": {
+          "useBatch": false
+        }
+      },
+      "HANACompatibilityModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "HANACompatibility",
+        "settings": {
+          "useBatch": false
+        }
+      },
+      "UpgConRemediationModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "UpgConRemediation",
+        "settings": {
+          "useBatch": false
+        }
+      },
+      "GLBalanceSSModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "GLBalances",
         "settings": {
           "useBatch": false
         }
@@ -210,9 +288,20 @@
           "target": "HANACompatibilitySS"
         },
         {
+
+          "name": "HANACompatibilityOutputTable",
+          "pattern": "HANACompatibilityOutputTable",
+          "target": "HANACompatibilityOutputTable"
+        },
+        {
           "name": "UpgConRemediationSS",
           "pattern": "UpgConRemediationSS",
           "target": "UpgConRemediationSS"
+        },
+         {
+          "name": "UpgConRemediationOutputTable",
+          "pattern": "UpgConRemediationOutputTable/{mode}",
+          "target": "UpgConRemediationOutputTable"
         },
         {
           "name": "FunModRemediationSS",
@@ -233,6 +322,46 @@
           "name": "AiRPAHireToRetire",
           "pattern": "AiRPAHireToRetire",
           "target": "AiRPAHireToRetire"
+        },
+         {
+          "name": "AiRPAGLBalanceSS",
+          "pattern": "AiRPAGLBalanceSS",
+          "target": "AiRPAGLBalanceSS"
+        },
+         {
+          "name": "AiRPAGLBalanceOutput",
+          "pattern": "AiRPAGLBalanceOutput",
+          "target": "AiRPAGLBalanceOutput"
+        },
+         {
+          "name": "MigrationHeadTile",
+          "pattern": "MigrationHeadTile",
+          "target": "MigrationHeadTile"
+        },
+         {
+          "name": "MigrationSubTile",
+          "pattern": "MigrationSubTile",
+          "target": "MigrationSubTile"
+        },
+         {
+          "name": "MigrationAuthObjRemSS",
+          "pattern": "MigrationAuthObjRemSS",
+          "target": "MigrationAuthObjRemSS"
+        },
+         {
+          "name": "MigrationAuthObjRemOutputTable",
+          "pattern": "MigrationAuthObjRemOutputTable",
+          "target": "MigrationAuthObjRemOutputTable"
+        },
+         {
+          "name": "MigrationSecRolRemSS",
+          "pattern": "MigrationSecRolRemSS",
+          "target": "MigrationSecRolRemSS"
+        },
+         {
+          "name": "MigrationSecRolRemOutputTable",
+          "pattern": "MigrationSecRolRemOutputTable",
+          "target": "MigrationSecRolRemOutputTable"
         }
       ],
       "targets": {
@@ -279,8 +408,14 @@
         "HANACompatibilitySS":{
           "viewName":"HANACompatibilitySS"
         },
+        "HANACompatibilityOutputTable":{
+          "viewName":"HANACompatibilityOutputTable"
+        },
         "UpgConRemediationSS":{
           "viewName":"UpgConRemediationSS"
+        },
+        "UpgConRemediationOutputTable":{
+          "viewName":"UpgConRemediationOutputTable"
         },
         "FunModRemediationSS":{
           "viewName":"FunModRemediationSS"
@@ -293,6 +428,30 @@
         },
         "AiRPAHireToRetire":{
           "viewName": "AiRPAHireToRetire"
+        },
+        "AiRPAGLBalanceSS":{
+          "viewName": "AiRPAGLBalanceSS"
+        },
+        "AiRPAGLBalanceOutput":{
+          "viewName": "AiRPAGLBalanceOutput"
+        },
+        "MigrationHeadTile":{
+          "viewName": "MigrationHeadTile"
+        },
+        "MigrationSubTile":{
+          "viewName": "MigrationSubTile"
+        },
+        "MigrationAuthObjRemSS":{
+          "viewName": "MigrationAuthObjRemSS"
+        },
+        "MigrationAuthObjRemOutputTable":{
+          "viewName": "MigrationAuthObjRemOutputTable"
+        },
+        "MigrationSecRolRemSS":{
+          "viewName": "MigrationSecRolRemSS"
+        },
+        "MigrationSecRolRemOutputTable":{
+          "viewName": "MigrationSecRolRemOutputTable"
         }
       }
     },

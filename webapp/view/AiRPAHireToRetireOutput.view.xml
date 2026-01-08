@@ -1,0 +1,74 @@
+<mvc:View
+	controllerName="haneya.controller.AiRPAHireToRetireOutput"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	height="100%"
+    xmlns="sap.ui.table"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+	busyIndicatorDelay="0"
+>
+<!-- <Table
+    items="{HireToRetireData>/results}">
+    
+    <columns>
+        <Column>
+            <Text text="PERNR"/>
+        </Column>
+        <Column>
+            <Text text="Status"/>
+        </Column>
+    </columns>
+
+    <items>
+        <ColumnListItem>
+            <cells>
+                <Text text="{HireToRetireData>PERNR}"/>
+                <Text text="{HireToRetireData>STATUS}"/>
+            </cells>
+        </ColumnListItem>
+    </items>
+
+</Table> -->
+
+<m:Page
+		showHeader="false"
+		enableScrolling="false"
+		class="sapUiContentPadding"
+		busy="{UiLoadingStatus>/busy}">
+		<m:content>
+			<m:Toolbar>
+				<m:Text text="Hire To Retire" class="headertext" width="100%" textAlign="Center"></m:Text>
+				<m:ToolbarSpacer/>
+    			
+			</m:Toolbar>
+			<Table
+			    id="GLBalancetable"
+    			class="blueHeaderTable"
+				rows="{HireToRetireData>/results}"
+				selectionMode="MultiToggle"
+				paste="onPaste"
+				ariaLabelledBy="title">
+
+                <columns>
+					<Column width="11rem">
+						<m:Label text="PERNR" class="HeaderText"/>
+						<template>
+							<m:Text text="{HireToRetireData>PERNR}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Status" class="HeaderText" />
+						<template>
+							<m:Text text="{HireToRetireData>STATUS}" />
+						</template>
+					</Column>
+                </columns>    
+			</Table>
+		</m:content>
+	</m:Page>
+
+
+
+</mvc:View>

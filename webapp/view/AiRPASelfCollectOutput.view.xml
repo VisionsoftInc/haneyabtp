@@ -1,0 +1,84 @@
+<mvc:View
+    controllerName="haneya.controller.AiRPASelfCollectOutput"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0">
+
+    <Page
+        title="Self Collect Processing Result"
+        showHeader="true">
+
+        <content>
+
+            <Table
+                id="resultTable"
+                items="{ResultModel>/results}"
+                inset="false"
+                growing="true"
+                growingScrollToLoad="true"
+                width="100%">
+
+                <columns>
+                    <Column><Text text="Quotation" /></Column>
+                    <Column><Text text="Quotation Status" /></Column>
+
+                    <Column><Text text="Sales Order" /></Column>
+                    <Column><Text text="SO Status" /></Column>
+
+                    <Column><Text text="Delivery" /></Column>
+                    <Column><Text text="Delivery Status" /></Column>
+
+                    <Column><Text text="Billing Doc" /></Column>
+                    <Column><Text text="Billing Status" /></Column>
+
+                    <Column><Text text="Accounting Doc" /></Column>
+                    <Column><Text text="Accounting Status" /></Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells>
+
+                            <ObjectIdentifier
+                                title="{ResultModel>VBELN_QT}" />
+
+                            <Text
+                                text="{ResultModel>STATUS_QT}" />
+
+                            <ObjectIdentifier
+                                title="{ResultModel>VBELN_SO}" />
+
+                            <Text
+                                text="{ResultModel>STATUS_SO}" />
+
+                            <ObjectIdentifier
+                                title="{ResultModel>VBELN_DL}" />
+
+                            <Text
+                                text="{ResultModel>STATUS_DL}" />
+
+                            <ObjectIdentifier
+                                title="{ResultModel>BILLNO}" />
+
+                            <Text
+                                text="{ResultModel>STATUS_BL}" />
+
+                            <ObjectIdentifier
+                                title="{ResultModel>ACCTDOCNO}" />
+
+                            <Text
+                                text="{ResultModel>STATUS_ACNT}" />
+
+                        </cells>
+                    </ColumnListItem>
+                </items>
+
+            </Table>
+
+        </content>
+    </Page>
+
+</mvc:View>

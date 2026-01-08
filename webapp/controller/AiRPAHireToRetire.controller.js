@@ -10,6 +10,8 @@ sap.ui.define([
         
          jQuery.sap.includeStyleSheet(sap.ui.require.toUrl("haneya/view/AiRPAHireToRetire.view.css"));
 		 this._excelData = [];
+         this.oModel=this.getOwnerComponent().getModel("HireToRetireModel")
+         this.oResult=this.getOwnerComponent().getModel("HireToRetireData")
        },
 	   onFileChange: function (oEvent) {
            const file = oEvent.getParameter("files")[0];
@@ -50,18 +52,27 @@ handleUploadPress: function () {
       };
     debugger
     // Example: send to backend
+   
     this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", true);
 
-    this.getOwnerComponent().getModel("yourODataModel").create(
-        "/YourEntitySet",
+   this.oModel.create(
+        "/hire_to_retireSet",
        payload1,
         {
-            success: () => {
+            success: (odata) => {
                 this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", false);
+                  this.oResult.setData({
+            results: JSON.parse(odata.payload|| odata)
+        });
+         this.getOwnerComponent()
+                .getRouter()
+                .navTo("AiRPAHireToRetireOutput");
+                console.log("response",odata.payload)
                 sap.m.MessageToast.show("Processed successfully");
             },
-            error: () => {
+            error: (e) => {
                 this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", false);
+                console.log("error",e)
                 sap.m.MessageToast.show("Failed");
             }
         }

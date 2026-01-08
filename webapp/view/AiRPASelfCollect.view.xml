@@ -5,7 +5,7 @@
 	xmlns:u="sap.ui.unified"
   xmlns="sap.m"
 >
-  <Page title="Self Collect"> 
+  <Page title="Self Collect" busy="{UiLoadingStatus>/busy}" busyIndicatorDelay="0" > 
    <VBox class="BigBox" justifyContent="Center">
             <Text text="Selection Criteria: " class="SelectionText"></Text>
             <VBox class="BigBox" alignItems="Start" justifyContent="Center">

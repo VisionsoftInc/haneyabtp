@@ -80,9 +80,7 @@ sap.ui.define([
                 results: oData?.results || []
             });
 
-            this.getOwnerComponent()
-                .getRouter()
-                .navTo("CustObjConOutputTable");
+           AiRPASelfCollectOutput
         }.bind(this),
 
         error: function (oError) {

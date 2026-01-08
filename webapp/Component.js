@@ -24,6 +24,10 @@ sap.ui.define([
                this.setModel( oExcelPayloadModel, "ExcelPayloadModel");
                 var oConsignmentPayloadModel = new JSONModel({});
                this.setModel( oConsignmentPayloadModel, "ConsignmentModel");
+                var oSelfCollectPayloadModel = new JSONModel({});
+               this.setModel(oSelfCollectPayloadModel, "ResultModel");
+               var oHireToRetireModel = new JSONModel({});
+               this.setModel(oHireToRetireModel, "HireToRetireData");
 
                 var oUIModel = new sap.ui.model.json.JSONModel({
                   simulate: false

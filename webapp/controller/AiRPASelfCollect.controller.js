@@ -9,7 +9,7 @@ sap.ui.define([
 
 	return Controller.extend("haneya.controller.AiRPASelfCollect", {
        onInit:function(){
-        
+        this.oModel=this.getOwnerComponent().getModel("aiprocess")
          jQuery.sap.includeStyleSheet(sap.ui.require.toUrl("haneya/view/AiRPASelfCollect.view.css"));
 		 this._excelData = [];
        },
@@ -47,24 +47,29 @@ handleUploadPress: function () {
     console.log("Using Excel Data:", this._excelData);
 
     const payload1 = {
-       payload: JSON.stringify(this._excelData) // send JSON as string
-       
+       payload: JSON.stringify(this._excelData),// send JSON as string
+           
       };
     debugger
     // Example: send to backend
     this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", true);
 
-    this.getOwnerComponent().getModel("yourODataModel").create(
-        "/YourEntitySet",
+    this.oModel.create(
+        "/Self_CollectSet",
        payload1,
         {
-            success: () => {
+            success: (response) => {
                 this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", false);
-                sap.m.MessageToast.show("Processed successfully");
-                 var oResultSelfCollect  = new sap.ui.model.json.JSONModel({
-                        records: parsed
-                    });
-                    sap.ui.getCore().setModel(oResultSelfCollect, "selfCollectResultModel");
+                 var oSelfCollectModel=this.getOwnerComponent().getModel("ResultModel")
+                  oSelfCollectModel.setData({
+                    // results:response.payload
+                 results: JSON.parse(response.payload)
+    });
+                 
+                     this.getOwnerComponent()
+                .getRouter()
+                .navTo("AiRPASelfCollectOutput");
+                  
             },
             error: () => {
                 this.getOwnerComponent().getModel("UiLoadingStatus").setProperty("/busy", false);

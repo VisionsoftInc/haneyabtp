@@ -42,6 +42,16 @@
         "localUri": "localService/CustomObjectConflicts/metadata.xml",
         "odataVersion": "2.0"
       }
+    },
+    "HireToRetire":{
+      "uri": "/sap/opu/odata/VSHANEYA/HTR_AI_PROCESS_SRV/",
+      "type": "OData",
+      "settings": {
+        "annotations": [],
+        "localUri": "localService/CustomObjectConflicts/metadata.xml",
+        "odataVersion": "2.0"
+      }
+
     }
   },
   "crossNavigation": {
@@ -114,6 +124,14 @@
         "settings": {
           "useBatch": false
         }
+      },
+      "HireToRetireModel":{
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "HireToRetire",
+        "settings": {
+          "useBatch": false
+        }
+
       }
     },
     "resources": {
@@ -234,6 +252,18 @@
           "pattern": "CustObjConOutputTable",
           "target": "CustObjConOutputTable"
 
+        },
+          {
+          "name": "AiRPASelfCollectOutput",
+          "pattern": "AiRPASelfCollectOutput",
+          "target": "AiRPASelfCollectOutput"
+
+        },
+        {
+          "name": "AiRPAHireToRetireOutput",
+          "pattern": "AiRPAHireToRetireOutput",
+          "target": "AiRPAHireToRetireOutput"
+
         }
       ],
       "targets": {
@@ -277,7 +307,7 @@
         "AiRPAConsignmentSalesOutput":{
           "viewName":"AiRPAConsignmentSalesOutput"
         },
-<<<<<<< HEAD
+
         "AiRPASelfCollect":{
            "viewName":"AiRPASelfCollect"
         },
@@ -297,6 +327,12 @@
         "CustObjConOutputTable":{
           "viewName":"CustObjConOutputTable"
 
+        },
+        "AiRPASelfCollectOutput":{
+           "viewName":"AiRPASelfCollectOutput"
+        },
+         "AiRPAHireToRetireOutput":{
+           "viewName":"AiRPAHireToRetireOutput"
         }
       }
     },

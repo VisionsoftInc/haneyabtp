@@ -5,7 +5,7 @@
 	xmlns:u="sap.ui.unified"
   xmlns="sap.m"
 >
-  <Page title="Hire To Retire"> 
+  <Page title="Hire To Retire" busy="{UiLoadingStatus>/busy}"> 
    <VBox class="BigBox" justifyContent="Center">
             <Text text="Selection Criteria: " class="SelectionText"></Text>
             <VBox class="BigBox" alignItems="Start" justifyContent="Center">
